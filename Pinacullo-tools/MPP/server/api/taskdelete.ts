@@ -6,8 +6,8 @@ export default defineEventHandler(async (event) => {
     return { success: false, message: 'Método não suportado' }
   }
 
-  const body = await readBody<{ id_project: string }>(event)
-  const id_projeto = sanitizeText(body.id_project)
+  const body = await readBody<{ name_task: string }>(event)
+  const name_task = sanitizeText(body.name_task)
 
   const supabase = createClient(
     useRuntimeConfig().supabaseUrl,
@@ -15,9 +15,9 @@ export default defineEventHandler(async (event) => {
   )
 
   const { error } = await supabase
-    .from('Projetos')
+    .from('Tasks')
     .delete()
-    .eq('id_projeto', id_projeto)
+    .eq('name_task', name_task)
 
   return error
     ? { success: false, message: 'Erro ao deletar projeto' }

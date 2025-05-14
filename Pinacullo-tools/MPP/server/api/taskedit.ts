@@ -7,18 +7,14 @@ export default defineEventHandler(async (event) => {
   }
 
   const body = await readBody<{
+    name_task: string
     id_project: string
-    name_project: string
-    date_initial: string
-    date_finalization: string
-    cost_project: string
+    infos: string
   }>(event)
 
-  const id_projeto = sanitizeText(body.id_project)
-  const name_project = sanitizeText(body.name_project)
-  const date_initial = sanitizeText(body.date_initial)
-  const date_finalization = sanitizeText(body.date_finalization)
-  const cost_project = sanitizeText(body.cost_project)
+  const name_task = sanitizeText(body.name_task)
+  const id_project = sanitizeText(body.id_project)
+  const infos = sanitizeText(body.infos)
 
   const supabase = createClient(
     useRuntimeConfig().supabaseUrl,
@@ -26,9 +22,9 @@ export default defineEventHandler(async (event) => {
   )
 
   const { error } = await supabase
-    .from('Projetos')
-    .update({ name_project, date_initial, date_finalization, cost_project })
-    .eq('id_projeto', id_projeto)
+    .from('Tasks')
+    .update({ name_task, id_project, infos})
+    .eq('name_task', name_task)
 
   return error
     ? { success: false, message: 'Erro ao editar projeto' }

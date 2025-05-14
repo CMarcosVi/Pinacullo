@@ -12,9 +12,9 @@ export default defineEventHandler(async (event) => {
   )
 
   const { data, error } = await supabase
-    .from('Customers')
+    .from('Tasks')
     .select('*')
-    .order('name_enterprise', { ascending: true })
+    .order('name_task', { ascending: true })
 
   return error
     ? { success: false, message: 'Erro ao buscar clientes' }
