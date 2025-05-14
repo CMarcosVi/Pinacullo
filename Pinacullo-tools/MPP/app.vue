@@ -1,35 +1,16 @@
 <template>
-  <section id="AllCode">
-    <NuxtRouteAnnouncer />
-    <NavBar />
-    <NuxtPage id="ContainerPrimary"/>
-  </section>
+  <NuxtLayout />
 </template>
-
-<script setup>
-  import NavBar from './src/components/NavBar.vue';
-</script>
-
-<style>
+<style lang="css">
 *{
-  margin:0 !important;
-  padding:0 !important;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 body{
-  height: 100vh;
-  width: 100%;
-}
-#__nuxt{
-  height: 100%;
-  width: 100%;
-}
-#AllCode{
-  display: flex;
-  width: 100%;
-  height: 100%;
-}
-#ContainerPrimary{
-  width: 80%;
+    min-height: 100vh;
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 </style>
