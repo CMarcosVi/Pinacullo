@@ -1,12 +1,11 @@
 const CIRCLE_MOUSE = document.querySelector('.circle-pointer-mouse');
 const LINK_NAV_BAR = document.querySelectorAll('.link-nav-bar')
 const VALUE_INPUT_YES = document.querySelector('.value-yes');
-const VALUE_INPUT_NOT = document.querySelector('.value-not');
 const LIST_TECNOLOGIS_SELECT = document.querySelector('.tecnologis-list')
 const TECNOLOGIS_USED = document.querySelectorAll('.tecnologis')
 const SERVICE_LIST = document.querySelectorAll('.service')
 const MOVING_IMG_MOUSE = document.getElementById("Moving");
-const MOVING_IMG_MOUSE2 = document.getElementById("Moving2");
+
 const TITLE_ANIMATION = document.getElementById("title")
 const PREV_BTN = document.getElementById("btn-prev");
 const NEXT_BTN = document.getElementById("btn-next");
@@ -17,8 +16,6 @@ const SERVICE_LOADING = document.querySelector('.loading-projects')
 const SERVICE_LOADING_TEXT = document.querySelector('.text-loading')
 const SERVICES_LIST = document.querySelectorAll(".service-type-2");
 const TECNOLOGIS_LIST = document.querySelectorAll(".tecnologis-used");
-const ABAOUT_AREA = document.querySelector(".about-text");
-const LOGO_ABAOUT_AREA = document.querySelector(".logo-text-container");
 
 
 const CONTAINER_FRONT_END = document.getElementsByClassName("front-end-container")[0]; // Acessando o primeiro elemento
@@ -82,21 +79,6 @@ window.addEventListener('scroll', () => {
     SCROLL_CONTAINER.style.opacity = opacity;
 });
 
-ABAOUT_AREA.addEventListener("mouseover", () => {
-    CIRCLE_MOUSE.style.borderColor = "#000"; 
-});
-
-ABAOUT_AREA.addEventListener("mouseout", () => {
-    CIRCLE_MOUSE.style.borderColor = "#fff"; 
-});
-
-LOGO_ABAOUT_AREA.addEventListener("mouseover", () => {
-    CIRCLE_MOUSE.style.borderColor = "#fff"; 
-});
-
-LOGO_ABAOUT_AREA.addEventListener("mouseout", () => {
-    CIRCLE_MOUSE.style.borderColor = "#000"; 
-});
 
 SERVICES_LIST.forEach((element) => {
     element.addEventListener("mouseover", () => {
@@ -147,23 +129,7 @@ document.addEventListener("mousemove", (ev) => {
     MOVING_IMG_MOUSE.style.transform = `translate(${positionX}px, ${positionY}px)`;
     TITLE_ANIMATION.style.transform = `translate(${positionX}px, ${positionY}px)`
 });
-document.addEventListener("mousemove", (ev) => {
-    const positionX = (window.innerWidth / -90 - ev.x) / 70;
-    const positionY = (window.innerHeight / 2 - ev.y) / 50; 
 
-    MOVING_IMG_MOUSE2.style.transform = `translate(${positionX}px, ${positionY}px)`;
-});
-
-VALUE_INPUT_NOT.addEventListener('click', () => {
-    VALUE_INPUT_NOT.classList.add('select-value');
-    VALUE_INPUT_YES.classList.remove('select-value');
-    LIST_TECNOLOGIS_SELECT.classList.remove("hide-list");;
-})
-VALUE_INPUT_YES.addEventListener('click', () => {
-    VALUE_INPUT_NOT.classList.remove('select-value');
-    VALUE_INPUT_YES.classList.add('select-value');
-    LIST_TECNOLOGIS_SELECT.classList.add("hide-list");
-})
 
 document.addEventListener('mousemove', (event) => {
     // Atualiza a posição do círculo com base nas coordenadas do mouse
@@ -187,3 +153,60 @@ const targetAnimation = () => {
     TITLE_ANIMATION.children[2].style.animation = "animation-tec-text 3s infinite linear";
 }
 setTimeout(targetAnimation, 5000)
+/* =========================  SOBRE – ANIMAÇÃO DE DIGITAÇÃO  ========================= */
+document.addEventListener("DOMContentLoaded", () => {
+  const typer = document.querySelector(".typer");
+  if (!typer) return;
+
+  const fullText = typer.dataset.text.trim();
+  const cursor = typer.querySelector(".cursor");
+  let i = 0;
+
+  function type() {
+    if (i < fullText.length) {
+      // Evita quebrar linhas manualmente: ^ representa quebra forçada
+      typer.insertBefore(document.createTextNode(fullText[i] === "\n" ? "\n" : fullText[i]), cursor);
+      i++;
+      setTimeout(type, 25); // velocidade (ms) da digitação
+    } else {
+      cursor.remove(); // remove o cursor ao terminar
+    }
+  }
+
+  type();
+});
+
+/* ======================  PROJETOS — JS  ====================== */
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".project-card");
+
+  /* IntersectionObserver = anima cada card ao entrar 30 % na viewport */
+  const io = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);           // anima só 1x
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+
+  cards.forEach(card => io.observe(card));
+});
+
+/* =========  APPEAR ON SCROLL  ========= */
+/* =========  SLIDE ON SCROLL + GRUPOS  ========= */
+const opts = {threshold:0.25};            // 25 % visível já conta
+  const io = new IntersectionObserver((entries, obs)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('show');
+        obs.unobserve(entry.target);        // remove se quiser animar só 1x
+      }
+    });
+  }, opts);
+
+  document.querySelectorAll('.slide-up, .slide-down, .slide-left, .slide-right, .slider-opacity')
+          .forEach(el=>io.observe(el));

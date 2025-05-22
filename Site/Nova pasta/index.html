@@ -4,14 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PINACULLO</title>
+    <meta name="description" content="A Pinacullo desenvolve sites, apps e sistemas sob medida, unindo design, performance e segurança." />
+    <link rel="canonical" href="https://www.pinacullo.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Pinacullo — Software House" />
+    <meta property="og:description" content="Transformamos ideias em soluções digitais de alto impacto." />
+    <meta property="og:image" content="https://www.pinacullo.com.br/assets/og-cover.jpg" />
+    <meta property="og:url" content="https://www.pinacullo.com.br/" />
     <link rel="shortcut icon" href="./assets/logo-pinacullo-head.png" type="image/x-icon">
-    <link rel="stylesheet" href="./index.css">
+    <link rel="preload" href="index.css" as="style">
+    <link rel="stylesheet" href="style.min.css">
+
 </head>
 <body>
     <header>
-        <div class="logo-type"><img src="./assets/unnamed.jpg" alt=""></div>
+        <div class="logo-type"><img src="./assets/unnamed.jpg" alt="pinacullo icone"></div>
         <nav>
-            <a class="link1 link-nav-bar" ><p>inicio</p></a>
+            <a class="link1 link-nav-bar" href="#Home"><p>inicio</p></a>
             <a class="link2 link-nav-bar" href="#About"><p>sobre</p></a>
             <a class="link3 link-nav-bar" href="#Tecnologys"><p>tecnologias</p></a>
             <a class="link3 link-nav-bar" href="#contact"><p>desenvolvimento</p></a>
@@ -20,58 +29,66 @@
         </nav>
         <div class="redirect-Login">
             <div class="createAccount"><p></p></div>
-            <a class="loginBtn" href="#contact"><p>contato</p></a>
+            <a class="loginBtn" href="mailto:commercial@pinacullo.com"><p>contato</p></a>
         </div>
     </header>
     <main>
-        <section id="Home" class="scroll-container">
+        <section id="Home" aria-label="Início" class="scroll-container">
             <div>
-                <h1 id="title"><span>this is technology,</span><span> this is future,</span> <span>this is a</span></h1>
-                <img  class="img-center-screen" src="./assets/unnamed.jpg" id="Moving" alt="">
-                <div class="line1"><img src="./assets/line-home.png" alt=""></div>
-                <div class="line2"><img src="./assets/line-home.png" alt=""></div>
+                <h1 id="title" style="font-size: clamp(16px, 3vw, 22px);line-height:1.1;margin:0;"><span>this is technology,</span><span> this is future,</span> <span>this is a</span></h1>
+                <img  class="img-center-screen" src="./assets/unnamed.jpg" id="Moving" alt="pinacullo icone">
+                <div class="line1"><img src="./assets/line-home.png" alt="line one"></div>
+                <div class="line2"><img src="./assets/line-home.png" alt="line two"></div>
                 <div class="line3"><div class="inter-line-3"></div></div>
                 <div class="line4"><div class="inter-line-4"></div></div>
                 <div class="line5"><div class="inter-line-5"></div></div>   
             </div>
         </section>
-        <section id="About">
-            <div class="about-text">
-                <img  class="img-bg-abaout" src="./assets/unnamed.jpg" id="Moving2" alt="">
-                <div class="about-container" >
-                    <div class="text-about-container">
-                        <h2 style="font-size: 2rem; color: #1a1a1a;">Sobre o Pinacullo</h2>
-                            <p style="font-size: 1.1rem; margin-top: 1rem;">Em um mercado em constante evolução, <strong>Pinnacullo</strong> surge com uma proposta ousada: oferecer soluções completas em tecnologia com domínio de <strong>31 tecnologias de ponta</strong>.</p>
-                            <p style="font-size: 1.1rem; margin-top: 1rem;">De desenvolvimento a infraestrutura, de automação à inteligência artificial — <strong>Pinnacullo</strong> com a missão de acelerar a transformação digital, entregando agilidade, inovação e resultados reais.</p>
-                            <p style="font-size: 1.1rem; margin-top: 1rem;">Ainda jovem, mas com grande visão, ela não veio apenas para participar do mercado. <strong>Veio para liderar a próxima revolução.</strong></p>
-                    </div>
-                    <div class="logo-text-container">
-                        <img  src="./assets/unnamed.jpg" id="Moving2" alt="">         
-                    </div>
-                </section>
-                  
-            </div>
+
+        <section id="about" class="about">
+        <div class="about__wrapper">
+            <h2 class="slide-down about__title">sobre a pinacullo</h2>
+
+            <!-- Texto que será animado -->
+            <p class="about__text typer" data-text="
+                Somos uma software house especializada em transformar ideias ambiciosas
+                em produtos digitais de alto impacto. Combinamos design elegante,
+                arquitetura de código robusta e foco em performance para entregar valor
+                real aos nossos clientes.
+                ">
+            <!-- o JS substitui este conteúdo -->
+            <span class="cursor">|</span>
+            </p>
+
+            <!-- 3 “pilares” ilustrativos -->
+            <ul class="about__pillars">
+                <li class="slide-left"><strong>‣ Expertise Full-Stack</strong><br>Do planejamento ao deploy.</li>
+                <li class="slide-up"><strong>‣ Metodologia Ágil</strong><br>Sprints curtas e feedback constante.</li>
+                <li class="slide-right"><strong>‣ Qualidade e Suporte</strong><br>Código limpo e manutenção contínua.</li>
+            </ul>
+        </div>
         </section>
+
         <section id="Tecnologys">
-            <h2 class="title-tecnologis" style="display: none;">tecnologias</h2>
-            <p class="subtitle-services" style="display: none;">Projetos Completos exigem tecnologias Completas</p>
-            <div class="tecnologis-list-infos" >
+            <h2 class="title-tecnologis slide-down" style="display: none;">tecnologias</h2>
+            <p class="subtitle-services " style="display: none;">Projetos Completos exigem tecnologias Completas</p>
+            <div class="tecnologis-list-infos ">
                 <div class="areas-list-infos"></div>
                 <div class="tecnologis-container-infos" >
                     <div class="front-end-container" style="display: none;">
                         <h3 id="title-front-end">front - end</h3>
                         <div>
                             <ul class="list-tecn-tecnologys1">
-                                <li class="logo-tecno tec-logo-1"><img src="./assets/icons-tecnologis/html.png" alt=""></li>
-                                <li class="logo-tecno tec-logo-2"><img src="./assets/icons-tecnologis/text.png" alt=""></li>
-                                <li class="logo-tecno tec-logo-3"><img src="./assets/icons-tecnologis/sassIcon.png" alt=""></li>
-                                <li class="logo-tecno tec-logo-4"><img src="./assets/icons-tecnologis/bootstrapIcon.png" alt=""></li>
-                                <li class="logo-tecno tec-logo-5"><img src="./assets/icons-tecnologis/jsIcon.png" alt=""></li>
-                                <li class="logo-tecno tec-logo-6"><img src="./assets/icons-tecnologis/jqueryIcon.png" alt=""></li>
-                                <li class="logo-tecno tec-logo-7"><img src="./assets/icons-tecnologis/typescriptIcon.png" alt=""></li>
-                                <li class="logo-tecno tec-logo-8"><img src="./assets/icons-tecnologis/nuxtIcon.png" alt=""></li>
-                                <li class="logo-tecno tec-logo-9"><img src="./assets/icons-tecnologis/nextjsIcon.png" alt=""></li>
-                                <li class="logo-tecno tec-logo-10"><img src="./assets/icons-tecnologis/jestIcon.png" alt=""></li>
+                                <li class="logo-tecno tec-logo-1"><img src="./assets/icons-tecnologis/html.png" alt="logo html"></li>
+                                <li class="logo-tecno tec-logo-2"><img src="./assets/icons-tecnologis/text.png" alt="logo css"></li>
+                                <li class="logo-tecno tec-logo-3"><img src="./assets/icons-tecnologis/sassIcon.png" alt="logo sass"></li>
+                                <li class="logo-tecno tec-logo-4"><img src="./assets/icons-tecnologis/bootstrapIcon.png" alt="logo bootstrap"></li>
+                                <li class="logo-tecno tec-logo-5"><img src="./assets/icons-tecnologis/jsIcon.png" alt="logo javascript"></li>
+                                <li class="logo-tecno tec-logo-6"><img src="./assets/icons-tecnologis/jqueryIcon.png" alt="logo jquery"></li>
+                                <li class="logo-tecno tec-logo-7"><img src="./assets/icons-tecnologis/typescriptIcon.png" alt="logo typescript"></li>
+                                <li class="logo-tecno tec-logo-8"><img src="./assets/icons-tecnologis/nuxtIcon.png" alt="logo nuxt"></li>
+                                <li class="logo-tecno tec-logo-9"><img src="./assets/icons-tecnologis/nextjsIcon.png" alt="logo next"></li>
+                                <li class="logo-tecno tec-logo-10"><img src="./assets/icons-tecnologis/jestIcon.png" alt="logo jest"></li>
                             </ul>
                         </div>
                     </div>
@@ -110,36 +127,36 @@
                         </div>
                     </div>
                     <div>
-                        <h2 class="title-tecnologis">tecnologias</h2>
-                        <p class="subtitle-services">Projetos Completos exigem tecnologias Completas</p>
-                        <div class="carrosel-wrapper">
+                        <h2 class="title-tecnologis slide-down">tecnologias</h2>
+                        <p class="subtitle-services slide-up">Projetos Completos exigem tecnologias Completas</p>
+                        <div class="carrosel-wrapper slide-left">
                             <div class="carrosel-1">
                               <!-- Lista de tecnologias (original + duplicada) -->
-                              <div class="tecnologis-used"><li class="logo-tecno-used"><img src="./assets/icons-tecnologis/html.png" alt=""><p>HTML</p></li></div>
-                              <div class="tecnologis-used"><li class="logo-tecno-used"><img src="./assets/icons-tecnologis/text.png" alt=""><p>CSS</p></li></div>
-                              <div class="tecnologis-used"><li class="logo-tecno-used"><img src="./assets/icons-tecnologis/sassIcon.png" alt=""><p>SASS</p></li></div>
-                              <div class="tecnologis-used"><li class="logo-tecno-used"><img src="./assets/icons-tecnologis/bootstrapIcon.png" alt=""><p>BOOTSTRAP</p></li></div>
-                              <div class="tecnologis-used"><li class="logo-tecno-used"><img src="./assets/icons-tecnologis/jsIcon.png" alt=""><p>JAVASCRIPT</p></li></div>
-                              <div class="tecnologis-used"><li class="logo-tecno-used"><img src="./assets/icons-tecnologis/jqueryIcon.png" alt=""><p>JQUERY</p></li></div>
-                              <div class="tecnologis-used"><li class="logo-tecno-used"><img src="./assets/icons-tecnologis/typescriptIcon.png" alt=""><p>TYPESCRIPT</p></li></div>
-                              <div class="tecnologis-used"><li class="logo-tecno-used"><img src="./assets/icons-tecnologis/nuxtIcon.png" alt=""><p>NUXT</p></li></div>
-                              <div class="tecnologis-used"><li class="logo-tecno-used"><img src="./assets/icons-tecnologis/nextjsIcon.png" alt=""><p>NEXT</p></li></div>
-                              <div class="tecnologis-used"><li class="logo-tecno-used"><img src="./assets/icons-tecnologis/jestIcon.png" alt=""><p>JEST</p></li></div>
+                              <li class="tecnologis-used"><div class="logo-tecno-used"><img src="./assets/icons-tecnologis/html.png" alt=""><p>HTML</p></div></li>
+                              <li class="tecnologis-used"><div class="logo-tecno-used"><img src="./assets/icons-tecnologis/text.png" alt=""><p>CSS</p></div></li>
+                              <li class="tecnologis-used"><div class="logo-tecno-used"><img src="./assets/icons-tecnologis/sassIcon.png" alt=""><p>SASS</p></div></li>
+                              <li class="tecnologis-used"><div class="logo-tecno-used"><img src="./assets/icons-tecnologis/bootstrapIcon.png" alt=""><p>BOOTSTRAP</p></div></li>
+                              <li class="tecnologis-used"><div class="logo-tecno-used"><img src="./assets/icons-tecnologis/jsIcon.png" alt=""><p>JAVASCRIPT</p></div></li>
+                              <li class="tecnologis-used"><div class="logo-tecno-used"><img src="./assets/icons-tecnologis/jqueryIcon.png" alt=""><p>JQUERY</p></div></li>
+                              <li class="tecnologis-used"><div class="logo-tecno-used"><img src="./assets/icons-tecnologis/typescriptIcon.png" alt=""><p>TYPESCRIPT</p></div></li>
+                              <li class="tecnologis-used"><div class="logo-tecno-used"><img src="./assets/icons-tecnologis/nuxtIcon.png" alt=""><p>NUXT</p></div></li>
+                              <li class="tecnologis-used"><div class="logo-tecno-used"><img src="./assets/icons-tecnologis/nextjsIcon.png" alt=""><p>NEXT</p></div></li>
+                              <li class="tecnologis-used"><div class="logo-tecno-used"><img src="./assets/icons-tecnologis/jestIcon.png" alt=""><p>JEST</p></div></li>
                               <!-- Duplicados para scroll contínuo -->
-                              <div class="tecnologis-used"><li class="logo-tecno-used"><img src="./assets/icons-tecnologis/html.png" alt=""><p>HTML</p></li></div>
-                              <div class="tecnologis-used"><li class="logo-tecno-used"><img src="./assets/icons-tecnologis/text.png" alt=""><p>CSS</p></li></div>
-                              <div class="tecnologis-used"><li class="logo-tecno-used"><img src="./assets/icons-tecnologis/sassIcon.png" alt=""><p>SASS</p></li></div>
-                              <div class="tecnologis-used"><li class="logo-tecno-used"><img src="./assets/icons-tecnologis/bootstrapIcon.png" alt=""><p>BOOTSTRAP</p></li></div>
-                              <div class="tecnologis-used"><li class="logo-tecno-used"><img src="./assets/icons-tecnologis/jsIcon.png" alt=""><p>JavaScript</p></li></div>
-                              <div class="tecnologis-used"><li class="logo-tecno-used"><img src="./assets/icons-tecnologis/jqueryIcon.png" alt=""><p>JQUERY</p></li></div>
-                              <div class="tecnologis-used"><li class="logo-tecno-used"><img src="./assets/icons-tecnologis/typescriptIcon.png" alt=""><p>TYPESCRIPT</p></li></div>
-                              <div class="tecnologis-used"><li class="logo-tecno-used"><img src="./assets/icons-tecnologis/nuxtIcon.png" alt=""><p>NUXT</p></li></div>
-                              <div class="tecnologis-used"><li class="logo-tecno-used"><img src="./assets/icons-tecnologis/nextjsIcon.png" alt=""><p>NEXT</p></li></div>
-                              <div class="tecnologis-used"><li class="logo-tecno-used"><img src="./assets/icons-tecnologis/jestIcon.png" alt=""><p>JEST</p></li></div>
+                              <li class="tecnologis-used"><div class="logo-tecno-used"><img src="./assets/icons-tecnologis/html.png" alt=""><p>HTML</p></div></li>
+                              <li class="tecnologis-used"><div class="logo-tecno-used"><img src="./assets/icons-tecnologis/text.png" alt=""><p>CSS</p></div></li>
+                              <li class="tecnologis-used"><div class="logo-tecno-used"><img src="./assets/icons-tecnologis/sassIcon.png" alt=""><p>SASS</p></div></li>
+                              <li class="tecnologis-used"><div class="logo-tecno-used"><img src="./assets/icons-tecnologis/bootstrapIcon.png" alt=""><p>BOOTSTRAP</p></div></li>
+                              <li class="tecnologis-used"><div class="logo-tecno-used"><img src="./assets/icons-tecnologis/jsIcon.png" alt=""><p>JavaScript</p></div></li>
+                              <li class="tecnologis-used"><div class="logo-tecno-used"><img src="./assets/icons-tecnologis/jqueryIcon.png" alt=""><p>JQUERY</p></div></li>
+                              <li class="tecnologis-used"><div class="logo-tecno-used"><img src="./assets/icons-tecnologis/typescriptIcon.png" alt=""><p>TYPESCRIPT</p></div></li>
+                              <li class="tecnologis-used"><div class="logo-tecno-used"><img src="./assets/icons-tecnologis/nuxtIcon.png" alt=""><p>NUXT</p></div></li>
+                              <li class="tecnologis-used"><div class="logo-tecno-used"><img src="./assets/icons-tecnologis/nextjsIcon.png" alt=""><p>NEXT</p></div></li>
+                              <li class="tecnologis-used"><div class="logo-tecno-used"><img src="./assets/icons-tecnologis/jestIcon.png" alt=""><p>JEST</p></div></li>
                         </div>
                         
                         </div>
-                        <div class="carrosel-wrapper2">
+                        <div class="carrosel-wrapper2 slide-right">
                             <div class="carrosel-2">
                               <!-- Lista de tecnologias (original + duplicada) -->
                               <div class="tecnologis-used"><li class="logo-tecno-used"><img src="./assets/icons-tecnologis/javaIcon.png" alt=""><p>JAVA</p></li></div>
@@ -167,7 +184,7 @@
                               <div class="tecnologis-used"><li class="logo-tecno-used"><img src="./assets/icons-tecnologis/postgresqlIcon.png" alt=""><p>POSTGRESQL</p></li></div>
                         </div>  
                         </div>
-                        <div class="carrosel-wrapper">
+                        <div class="carrosel-wrapper slide-left">
                             <div class="carrosel-1">
                               <!-- Lista de tecnologias (original + duplicada) -->
                               <div class="tecnologis-used"><li class="logo-tecno-used"><img src="./assets/icons-tecnologis/photoshop-logo.png" alt=""><p>PHOTOSHOP</p></li></div>
@@ -234,9 +251,9 @@
             </div>
         </section>
         <section id="services2">
-            <h2 class="text-services">serviços</h2>
+            <h2 class="text-services slide-down">serviços</h2>
             <div class="services-list-2">
-                <div class="container-services service-type-1">
+                <div class="container-services service-type-1 slider-opacity">
                     <div>
                         <div class="icon-container-services">
                             <div class="container-icon-services">
@@ -247,7 +264,7 @@
                         <cite class="phrase">"Lading Page eficiente transforma cliques em conversões."</cite>
                     </div>
                 </div>
-                <div class="container-services service-type-2">
+                <div class="container-services service-type-2 slider-opacity">
                     <div>
                         <div class="icon-container-services">
                             <img src="./assets/icons-services/sites.png" alt="crm" class="icons-services">
@@ -256,7 +273,7 @@
                         <cite class="phrase">"Não ter um site em 2025 é como fechar sua loja no horário de pico!"</cite>
                     </div>
                 </div>
-                <div class="container-services service-type-1">
+                <div class="container-services service-type-1 slider-opacity">
                     <div>
                         <div class="icon-container-services">
                             <img src="./assets/icons-services/uiux.png" alt="crm" class="icons-services">
@@ -265,7 +282,7 @@
                         <cite class="phrase">"Beleza com propósito: cada pixel pensado para impactar."</cite>
                     </div>
                 </div>
-                <div class="container-services service-type-2">
+                <div class="container-services service-type-2 slider-opacity">
                     <div>
                         <div class="icon-container-services">
                             <img src="./assets/icons-services/seo.png" alt="crm" class="icons-services">
@@ -274,7 +291,7 @@
                         <cite class="phrase">"SEO é mais que visibilidade — é presença inteligente"</cite>
                     </div>
                 </div>
-                <div class="container-services service-type-1">
+                <div class="container-services service-type-1 slider-opacity">
                     <div>
                         <div class="icon-container-services">
                             <div class="container-icon-services">
@@ -285,7 +302,7 @@
                         <cite class="phrase">"Quem domina o conteúdo, domina o mercado."</cite>
                     </div>
                 </div>
-                <div class="container-services service-type-2">
+                <div class="container-services service-type-2 slider-opacity">
                     <div>
                         <div class="icon-container-services">
                             <img src="./assets/icons-services/erp.png" alt="crm" class="icons-services">
@@ -294,7 +311,7 @@
                         <cite class="phrase">"Eficiência, controle e visão — tudo em um único sistema ERP."</cite>
                     </div>
                 </div>
-                <div class="container-services service-type-1">
+                <div class="container-services service-type-1 slider-opacity">
                     <div>
                         <div class="icon-container-services">
                             <div class="container-icon-services">
@@ -305,7 +322,7 @@
                         <cite class="phrase">"Com CMS, a gestão de conteúdo vira uma experiência fluida e poderosa."</cite>
                     </div>
                 </div>
-                <div class="container-services service-type-2">
+                <div class="container-services service-type-2 slider-opacity">
                     <div>
                         <div class="icon-container-services">
                             <div class="container-icon-services">
@@ -316,7 +333,7 @@
                         <cite class="phrase">"E-commerce inteligente, resultados reais."</cite>
                     </div>
                 </div>
-                <div class="container-services service-type-1">
+                <div class="container-services service-type-1 slider-opacity">
                     <div>
                         <div class="icon-container-services">
                             <img src="./assets/icons-services/api.png" alt="crm" class="icons-services">
@@ -325,7 +342,7 @@
                         <cite class="phrase">"APIs conectam sistemas. Integram negócios. Potencializam resultados."</cite>
                     </div>
                 </div>
-                <div class="container-services service-type-2">
+                <div class="container-services service-type-2 slider-opacity">
                     <div>
                         <div class="icon-container-services">
                             <img src="./assets/icons-services/bi.png" alt="crm" class="icons-services">
@@ -334,7 +351,7 @@
                         <cite class="phrase">"Decisões certeiras nascem de dados bem analisados."</cite>
                     </div>
                 </div>
-                <div class="container-services service-type-1">
+                <div class="container-services service-type-1 slider-opacity">
                     <div>
                         <div class="icon-container-services">
                             <img src="./assets/icons-services/ia.png" alt="crm" class="icons-services">
@@ -343,7 +360,7 @@
                         <cite class="phrase">"Seu novo funcionário mais eficiente não precisa de salário, férias ou café."</cite>
                     </div>
                 </div>
-                <div class="container-services service-type-2">
+                <div class="container-services service-type-2 slider-opacity">
                     <div>
                         <div class="icon-container-services">
                             <img src="./assets/icons-services/pentest.png" alt="pentest" class="icons-services">
@@ -354,85 +371,56 @@
                 </div>
             </div>
         </section>      
-        <section id="contact">
-            <div class="container-title-contact">
-                <h2 class="title-contact">entrar em contato</h2>
+
+        <div id="nav-bar-mobile">
+            <div>
+                <a href="#Home"><img src="./assets/icons-navbar-mobile/home.png" alt="Início"></a>
+                <a href="#About"><img src="./assets/icons-navbar-mobile/idea.png" alt="Sobre"></a>
+                <a href="#Tecnologys"><img src="./assets/icons-navbar-mobile/technical-support.png" alt="Tecnologias"></a>
+                <a href="#services2"><img src="./assets/icons-navbar-mobile/services.png" alt="Serviços"></a>
             </div>
-            <div class="container-form">
-                <form action="">
-                    <div>
-                        <label for="">name</label>
-                        <input type="text">
-                    </div>
-                    <div>
-                        <label for="">email</label>
-                        <input type="text">
-                    </div>
-                    <div>
-                        <label for="">telefone</label>
-                        <input type="text">
-                    </div>
-                    <div class="type-service">
-                        <label for="">tipo de serviço</label>
-                        <div class="service-list">
-                            <div class="service">ApiRest</div>
-                            <div class="service">Design</div>
-                            <div class="service">Site</div>
-                            <div class="service">Landing Page</div>
-                            <div class="service">QA</div>
-                            <div class="service">ERP</div>
-                            <div class="service">SEO</div>
-                            <div class="service">CMS</div>
-                        </div>
-                    </div>
-                    <div>
-                        <label for="">deseja escolher as tecnologias agora?</label>
-                        <div class="change-yes-or-not">
-                            <div class="value-input value-yes">sim</div>
-                            <div class="value-input value-not">não</div>    
-                        </div>
-                    </div>
-                    <div class="tecnologis-list">
-                        <div class="tecnologis"><img src="./assets/icons-tecnologis/html.png" alt=""></div>
-                        <div class="tecnologis"><img src="./assets/icons-tecnologis/text.png" alt=""></div>
-                        <div class="tecnologis"><img src="./assets/icons-tecnologis/sassIcon.png" alt=""></div>
-                        <div class="tecnologis"><img src="./assets/icons-tecnologis/bootstrapIcon.png" alt=""></div>
-                        <div class="tecnologis"><img src="./assets/icons-tecnologis/jsIcon.png" alt=""></div>
-                        <div class="tecnologis"><img src="./assets/icons-tecnologis/jqueryIcon.png" alt=""></div>
-                        <div class="tecnologis"><img src="./assets/icons-tecnologis/typescriptIcon.png" alt=""></div>
-                        <div class="tecnologis"><img src="./assets/icons-tecnologis/nuxtIcon.png" alt=""></div>
-                        <div class="tecnologis"><img src="./assets/icons-tecnologis/nextjsIcon.png" alt=""></div>
-                        <div class="tecnologis"><img src="./assets/icons-tecnologis/jestIcon.png" alt=""></div>
-                        <div class="tecnologis"><img src="./assets/icons-tecnologis/javaIcon.png" alt=""></div>
-                        <div class="tecnologis"><img src="./assets/icons-tecnologis/c-sharpIcon.png" alt=""></div>
-                        <div class="tecnologis"><img src="./assets/icons-tecnologis/mysqlIcon.png" alt=""></div>
-                        <div class="tecnologis"><img src="./assets/icons-tecnologis/postgresqlIcon.png" alt=""></div>
-                        <div class="tecnologis"><img src="./assets/icons-tecnologis/nodejsIcon.svg" alt=""></div>
-                        <div class="tecnologis"><img src="./assets/icons-tecnologis/nestjs.svg" alt=""></div>
-                        <div class="tecnologis"><img src="./assets/icons-tecnologis/phpIcon.png" alt=""></div>
-                        <div class="tecnologis"><img src="./assets/icons-tecnologis/wordpressIcon.png" alt=""></div>
-                        <div class="tecnologis"><img src="./assets/icons-tecnologis/pythonIcon.png" alt=""></div>
-                        <div class="tecnologis"><img src="./assets/icons-tecnologis/goIcon.png" alt=""></div>
-                    </div>
-                </form>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <div class="logo-type-fotter"><img src="../site/assets/unnamed.jpg" alt=""></div>
-        <h2>todos os direitos reservados a ©pinacullo</h2>
-        <div></div>
-    </footer>
-    <div id="nav-bar-mobile">
-        <div>
-            <a href="#Home"><img src="./assets/icons-navbar-mobile/home.png" alt=""></a>
-            <a href="#About"><img src="./assets/icons-navbar-mobile/idea.png" alt=""></a>
-            <a href="#Tecnologys"><img src="./assets/icons-navbar-mobile/technical-support.png" alt=""></a>
-            <a href="#services2"><img src="./assets/icons-navbar-mobile/services.png" alt=""></a>
         </div>
-    </div>
-    <div class="circle-pointer-mouse"></div>
-    <div class="cicle1"></div>
-    <script src="./index.js" defer></script>
+        <div class="circle-pointer-mouse"></div>
+        <div class="cicle1"></div>
+    </main>
+    <footer class="site-footer">
+        <!-- Imagem no topo (substitua o src pela sua) -->
+
+
+        <!-- Conteúdo em 3 colunas -->
+        <div class="footer-content">
+            <!-- Coluna 1 — Título + texto -->
+            <div class="footer-col">
+                <h3 class="footer-title">pinacullo</h3>
+                <p class="footer-text">
+                    Transformamos ideias em soluções digitais de alto impacto.
+                    Conte com nossa equipe para elevar o nível do seu projeto.
+                </p>
+            </div>
+
+            <!-- Coluna 2 — Contatos -->
+            <div class="footer-col">
+            <ul class="contact-list">
+                <li>
+                    <a href="mailto:commercial@pinacullo.comm"><img src="./assets/email.png" alt="Email icone"/></a>
+                </li>
+            </ul>
+            </div>
+
+            <!-- Coluna 3 — Botão -->
+            <div class="footer-col footer-col-3">
+                <a class="btn-contact" href="mailto:commercial@pinacullo.com">Entrar em contato</a>
+            </div>
+        </div>
+
+        <!-- Linha de direitos autorais -->
+        <div class="footer-bottom">
+            <div class="footer-logo">
+                <img src="./assets/unnamed.jpg" alt="Pinacullo Logo">
+            </div>
+            <p>Todos os direitos reservados — © Pinacullo ⚑2025</p>
+        </div>
+    </footer>
 </body>
+    <script src="./main.min.js" defer></script>
 </html>
