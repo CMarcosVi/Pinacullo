@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+  margin: 0;
+  padding: 30px;
+  font-family: "Major Mono Display", monospace;
+  background-color: #111;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+.img-central{
+    width: 90%;
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    mix-blend-mode:color-dodge;
+    opacity: .5;
+}
+.tools-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* QR Code Container */
+.container {
+  background-color: #000;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 0 20px #222;
+  border: 2px solid #fff;
+  z-index: 99;
+  position: relative;
+}
+
+/* WhatsApp Generator Section */
+.section {
+  background: #222;
+  padding: 20px;
+  margin: 0;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+  animation: slide-up 0.6s ease-out;
+    border: 2px solid #fff;
+    z-index: 99;
+    position: relative;
+}
+
+/* Inputs e Textarea */
+input[type="text"],
+input[type="number"],
+input[type="color"],
+input[type="file"],
+input,
+textarea {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 90%;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+}
+
+textarea {
+  max-height: 200px;
+  overflow-y: auto;
+  resize: vertical;
+}
+
+/* Botões */
+button {
+  padding: 10px 20px;
+  margin: 10px 5px;
+  border: none;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
+  font-weight: bold;
+  width: auto;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #ccc;
+}
+
+/* QR Code Visual */
+#qrcode-container {
+  margin-top: 20px;
+  max-width: 250px;
+  max-height: 250px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#qrcode canvas {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 250px;
+  max-height: 250px;
+}
+
+/* Link do WhatsApp */
+a#wppResult {
+  word-break: break-word;
+  color: #25d366;
+  text-decoration: underline;
+}
+
+/* Área do link */
+.link-area {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#copyStatus {
+  font-size: 0.9em;
+  color: #6fcf97;
+  margin-top: 5px;
+}
+
+/* Utilidade */
+.hidden {
+  display: none;
+}
+
+/* Animação */
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media only screen and (max-width: 768px) {
+    body{
+        flex-direction: column;
+    }
+}

@@ -13,21 +13,29 @@
         <div>
           <em>Status: {{ tarefa.feito ? 'Feito' : 'Pendente' }}</em>
         </div>
+        <button @click="abrirEditar(tarefa, index)">Editar</button>
         <button @click="alternarStatus(index)">
           {{ tarefa.feito ? 'Desfazer' : 'Concluir' }}
         </button>
         <button @click="remover(index)">Excluir</button>
       </li>
     </ul>
+    <ModalTaskEdit
+      :show="mostrarEdit"
+      :tarefa="tarefaEdit"
+      @update="atualizarTarefa"
+      @close="mostrarEdit = false"
+    />
   </div>
 </template>
 
-<script setup lang="ts">
+<script lang="ts">
 import { ref } from 'vue'
-import ModalTarefa from '@/components/modais/ModalTarefa.vue'
+import ModalTarefa   from '@/components/modais/ModalTask.vue'
+import ModalTaskEdit from '@/components/modais/ModalTaskEdit.vue'
 import { definePageMeta } from '#imports'
 
-
+definePageMeta({ layout: 'default' })
 
 interface Tarefa {
   titulo: string
@@ -35,22 +43,37 @@ interface Tarefa {
   feito: boolean
 }
 
-const abrir = ref(false)
-const tarefas = ref<Tarefa[]>([])
+/* ------------------ states ------------------ */
+const abrirCriar  = ref(false)
+const mostrarEdit = ref(false)
+const tarefas     = ref<Tarefa[]>([])
 
-const adicionarTarefa = (tarefa: Tarefa) => {
-  tarefas.value.push(tarefa)
+/* referência à tarefa/índice que está sendo editado */
+const tarefaEdit   = ref<Tarefa | null>(null)
+const indiceEdit   = ref<number | null>(null)
+
+/* ------------------ handlers ------------------ */
+const adicionarTarefa = (t: Tarefa) => tarefas.value.push(t)
+
+const alternarStatus  = (i: number) =>
+  (tarefas.value[i].feito = !tarefas.value[i].feito)
+
+const remover = (i: number) => tarefas.value.splice(i, 1)
+
+/* abrir modal para editar uma tarefa existente */
+const abrirEditar = (tarefa: Tarefa, index: number) => {
+  tarefaEdit.value = { ...tarefa }   // cópia para edição local
+  indiceEdit.value = index
+  mostrarEdit.value = true
 }
 
-const alternarStatus = (index: number) => {
-  tarefas.value[index].feito = !tarefas.value[index].feito
-}
-
-const remover = (index: number) => {
-  tarefas.value.splice(index, 1)
+/* receber tarefa atualizada vinda do modal */
+const atualizarTarefa = (tarefaAtualizada: Tarefa) => {
+  if (indiceEdit.value !== null)
+    tarefas.value[indiceEdit.value] = tarefaAtualizada
+  mostrarEdit.value = false
 }
 </script>
-
 
 <style scoped>
 .tarefas {

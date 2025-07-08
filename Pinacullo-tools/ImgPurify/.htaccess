@@ -1,0 +1,30 @@
+#######################################################################
+# .htaccess minimalista
+# ↳  Mostra /index.html normalmente (inclusive quando acessado como “/”)
+# ↳  /script.js e /style.css continuam públicos
+# ↳  Qualquer outro arquivo devolve 403 Forbidden
+# ↳  Compatível com Apache 2.4 e 2.2
+#######################################################################
+
+# 1) Desliga listagem de diretórios e define página inicial
+Options -Indexes
+DirectoryIndex index.html
+
+# 2) BLOQUEIA tudo que NÃO seja index.html, script.js ou style.css
+#    (não nega o diretório raiz — por isso “/” abre sem erro)
+# --------------------------------------------------------------------
+
+# --- Apache 2.4+ -----------------------------------------------------
+<IfModule mod_authz_core.c>
+  <FilesMatch "^(?!index\.html$|script\.js$|style\.css$).+">
+    Require all denied
+  </FilesMatch>
+</IfModule>
+
+# --- Apache 2.2 ------------------------------------------------------
+<IfModule !mod_authz_core.c>
+  <FilesMatch "^(?!index\.html$|script\.js$|style\.css$).+">
+    Order allow,deny
+    Deny from all
+  </FilesMatch>
+</IfModule>

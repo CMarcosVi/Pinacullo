@@ -1,0 +1,19 @@
+# Desativa listagem de diretório
+Options -Indexes
+
+# Bloqueia bots comuns (varredura, scraping, crawlers)
+SetEnvIfNoCase User-Agent "curl" bad_bot
+SetEnvIfNoCase User-Agent "wget" bad_bot
+SetEnvIfNoCase User-Agent "python" bad_bot
+SetEnvIfNoCase User-Agent "nmap" bad_bot
+SetEnvIfNoCase User-Agent "shodan" bad_bot
+SetEnvIfNoCase User-Agent "crawler" bad_bot
+SetEnvIfNoCase User-Agent "scrapy" bad_bot
+SetEnvIfNoCase User-Agent "Go-http-client" bad_bot
+SetEnvIfNoCase User-Agent "libwww" bad_bot
+
+# Impede indexação por mecanismos de busca
+Header set X-Robots-Tag "noindex, nofollow"
+
+# Remove o cabeçalho que mostra o nome do servidor
+Header unset Server

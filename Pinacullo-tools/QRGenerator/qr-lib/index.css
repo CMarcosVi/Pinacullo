@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #111;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  min-height: 100vh;
+  padding: 30px;
+}
+
+.container {
+  background-color: #000;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 0 20px #222;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="color"],
+input[type="file"] {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 90%;
+  border-radius: 8px;
+  border: none;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px 5px;
+  border: none;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #ccc;
+}
+
+#qrcode-container {
+  margin-top: 20px;
+  max-width: 250px;
+  max-height: 250px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#qrcode canvas {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 250px;
+  max-height: 250px;
+}
+
+.hidden {
+  display: none;
+}

@@ -2,9 +2,18 @@
   <div v-if="show" class="modal-backdrop">
     <div class="modal-content">
       <h2>Editar Cliente</h2>
-      <input v-model="form.name_enterprise" placeholder="Nome da empresa" />
-      <input v-model="form.id_customer" placeholder="ID do cliente" disabled />
-      <input v-model.number="form.sell_price" type="number" placeholder="Preço de venda" />
+      <div>
+        <label for=""> Nome da empresa</label>
+        <input v-model="form.name_enterprise" placeholder="Nome da empresa" />
+      </div>
+      <div>
+        <label for=""> Id do CLiente</label>
+        <input v-model="form.id_customer" placeholder="ID do cliente" disabled />
+      </div>
+      <div>
+        <label for="">Preço</label>
+        <input v-model.number="form.sell_price" type="number" placeholder="Preço de venda" />
+      </div>
       <div class="modal-actions">
         <button @click="confirmar">Salvar</button>
         <button @click="$emit('close')">Cancelar</button>

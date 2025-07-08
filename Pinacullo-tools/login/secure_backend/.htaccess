@@ -1,0 +1,8 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Bloqueia acesso direto por navegador
+  RewriteCond %{HTTP_REFERER} !^http://localhost/login-secure-hardened/ [NC]
+  RewriteCond %{REQUEST_METHOD} !POST
+  RewriteRule ^.*$ - [F,L]
+</IfModule>

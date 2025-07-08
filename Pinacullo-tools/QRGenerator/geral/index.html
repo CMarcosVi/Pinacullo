@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="robots" content="noindex, nofollow">
+  <title>Ferramentas de Geração</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <img class="img-central" src="./assets/unnamed.jpg" alt="">
+  <div class="container">
+    <h1>gerador de qr code</h1>
+    <input type="text" id="text" placeholder="Digite o texto ou link" />
+    <label for="size">tamanho do qr (px):</label>
+    <input type="number" id="size" placeholder="Ex: 256" />
+    <label for="color">cor do qr code:</label>
+    <input type="color" id="color" value="#000000" />
+    <label for="bgColor">cor do fundo:</label>
+    <input type="color" id="bgColor" value="#ffffff" />
+    <label for="image">icone central (opcional):</label>
+    <input type="file" id="image" accept="image/*" />
+    <button onclick="generateQR()">gerar qr code</button>
+    <div id="qrcode-container"></div>
+    <div id="download-buttons" class="hidden">
+      <p>baixar como:</p>
+      <button onclick="download('png')">PNG</button>
+      <button onclick="download('jpg')">JPG</button>
+      <button onclick="download('svg')">SVG</button>
+    </div>
+  </div>
+
+  <div class="section fade-in">
+    <h2>gerador de link do whatsapp</h2>
+    <input type="text" id="wppNumber" placeholder="Número (ex: 5511999999999)" />
+    <textarea id="wppMessage" placeholder="Mensagem automática"></textarea>
+    <button onclick="generateWppLink()">GERAR LINK</button>
+    <div class="link-area">
+      <p>Link gerado:</p>
+      <p><a id="wppResult" href="#" target="_blank"></a></p>
+      <button id="copyBtn" onclick="copyLink()">COPIAR LINK</button>
+      <p id="copyStatus"></p>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/qr-code-styling/lib/qr-code-styling.js"></script>
+  <script src="script.js"></script> <!-- Para o WhatsApp -->
+</body>
+</html>

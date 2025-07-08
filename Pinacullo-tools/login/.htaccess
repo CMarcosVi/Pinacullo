@@ -1,0 +1,9 @@
+Options -Indexes
+
+<IfModule mod_headers.c>
+  Header set X-Robots-Tag "noindex, nofollow, noarchive, nosnippet"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "DENY"
+  Header always set X-XSS-Protection "1; mode=block"
+  Header always set Referrer-Policy "no-referrer"
+</IfModule>

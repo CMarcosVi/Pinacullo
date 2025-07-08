@@ -1,0 +1,25 @@
+# Arquivo: /robots.txt
+# Última revisão: 2025-06-09
+# Objetivo: reduzir indexação de áreas sensíveis e aliviar carga de crawl.
+
+User-agent: *
+  # Bloqueia diretórios internos
+  Disallow: /config/
+  Disallow: /private/
+  Disallow: /backup/
+  Disallow: /lib/
+  # Bloqueia arquivos potencialmente críticos
+  Disallow: /*.env$
+  Disallow: /*.sql$
+  Disallow: /*.log$
+  Disallow: /README.md
+  # Atenua carga em crawlers agressivos
+  Crawl-delay: 10
+
+# Exemplo de bloqueio de bots conhecidos por scraping pesado
+User-agent: AhrefsBot
+  Disallow: /
+
+User-agent: MJ12bot
+  Disallow: /
+

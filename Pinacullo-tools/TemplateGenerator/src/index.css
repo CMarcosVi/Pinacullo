@@ -1,0 +1,40 @@
+/* Reset simples */
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:system-ui,-apple-system,blinkmacsystemfont,"Segoe UI",Roboto;
+  background:#111;
+  color:#fff;
+  line-height:1.4;
+}
+
+/* Utilidades */
+.container{max-width:960px;margin:auto;padding:2rem}
+.btn{
+  display:inline-block;
+  padding:.8rem 1.6rem;
+  background:#2563eb;
+  color:#fff;
+  border:none;
+  border-radius:4px;
+  cursor:pointer;
+  transition:background .2s;
+}
+.btn:hover{background:#1d4ed8}
+
+/* Cartões */
+.card{
+  background:#1f1f1f;
+  padding:1rem 1.5rem;
+  border-radius:6px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.card small{color:#bbb}
+
+
+
+section{
+  height: 100vh;
+  width: 100%;
+}

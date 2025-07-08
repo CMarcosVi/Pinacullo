@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+:root {
+  --black: #000;
+  --white: #fff;
+  --gray-light: #f4f4f4;
+  --gray-medium: #ccc;
+  --gray-dark: #333;
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--black);
+  color: var(--white);
+  line-height: 1.6;
+}
+
+/* GENERIC SECTION */
+section {
+  padding: 6rem 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+h2.section-title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  text-align: center;
+  color: var(--white);
+  margin-bottom: 0.75rem;
+}
+
+p.section-subtitle {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  color: var(--gray-medium);
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  padding: 0.9rem 2.2rem;
+  font-weight: 600;
+  border: 2px solid var(--white);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.btn:hover {
+  background: var(--white);
+  color: var(--black);
+}
+
+/* ABOUT */
+.about {
+  background: url('https://images.unsplash.com/photo-1531973968078-9bb02785f13d?auto=format&fit=crop&w=1600&q=80') center/cover fixed;
+}
+.about .content-box {
+  backdrop-filter: brightness(0.35) grayscale(100%);
+  background: rgba(0, 0, 0, 0.6);
+  padding: 5rem 2rem;
+  border-radius: 12px;
+}
+.about p {
+  font-size: 1.1rem;
+  color: var(--gray-light);
+}
+
+/* SERVICES */
+.services {
+  background: var(--black);
+  border-top: 1px solid var(--gray-dark);
+  border-bottom: 1px solid var(--gray-dark);
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+}
+.service-card {
+  background: #111;
+  padding: 2.5rem 2rem;
+  border-radius: 10px;
+  border: 1px solid var(--gray-dark);
+  transition: transform 0.3s ease, border 0.3s ease;
+}
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--white);
+}
+.service-card h3 {
+  margin-bottom: 0.5rem;
+  color: var(--white);
+}
+.service-card p {
+  color: var(--gray-medium);
+  font-size: 0.95rem;
+}
+
+/* TESTIMONIALS */
+.testimonials {
+  background: var(--black);
+}
+.testimonials-track {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.testimonials-track::-webkit-scrollbar {
+  display: none;
+}
+.testimonial-card {
+  min-width: 280px;
+  background: #111;
+  padding: 2rem;
+  border-radius: 10px;
+  border: 1px solid var(--gray-dark);
+  scroll-snap-align: start;
+  transition: transform 0.3s ease, border 0.3s ease;
+}
+.testimonial-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--white);
+}
+.testimonial-card p {
+  color: var(--gray-light);
+  margin-bottom: 1rem;
+}
+
+/* PROCESS */
+.process {
+  background: var(--black);
+}
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  position: relative;
+}
+.process-steps::before {
+  content: '';
+  position: absolute;
+  left: calc(50% - 1px);
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: var(--gray-dark);
+}
+.step {
+  text-align: center;
+  padding-top: 3rem;
+  position: relative;
+}
+.step span {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  font-weight: 700;
+  background: var(--gray-dark);
+  color: var(--white);
+  margin-bottom: 0.75rem;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.step.active span {
+  background: var(--white);
+  color: var(--black);
+  transform: scale(1.1);
+}
+.step h4 {
+  font-size: 1.05rem;
+  color: var(--gray-light);
+}
+
+/* CTA */
+.cta {
+  text-align: center;
+  padding: 6rem 2rem;
+  background: #111;
+}
+.cta h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--white);
+  margin-bottom: 1.5rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 640px) {
+  section {
+    padding: 4rem 1rem;
+  }
+  .services-grid, .process-steps {
+    grid-template-columns: 1fr;
+  }
+}

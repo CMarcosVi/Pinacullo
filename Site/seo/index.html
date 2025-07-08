@@ -21,6 +21,8 @@
   <meta name="twitter:title" content="SEO • Pinacullo – Sua marca no topo todos os dias" />
   <meta name="twitter:description" content="Transforme pesquisas em receita com as estratégias de SEO da Pinacullo." />
   <meta name="twitter:image" content="https://pinacullo.com/assets/seo-cover.jpg" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
   <!-- ======= STRUCTURED DATA ======= -->
   <script type="application/ld+json">
@@ -45,16 +47,47 @@
 </head>
 
 <body>
+    <header>
+        <div class="logo-type"><img src="../assets/unnamed.jpg" alt="pinacullo icone"></div>
+        <nav>
+            <a class="link1 link-nav-bar" href="#Home"><p>inicio</p></a>
+            <a class="link2 link-nav-bar" href="#About"><p>sobre</p></a>
+            <a class="link3 link-nav-bar" href="#Tecnologys"><p>tecnologias</p></a>
+            <a class="link3 link-nav-bar" href="#contact"><p>desenvolvimento</p></a>
+            <a class="link4 link-nav-bar" href="#services2"><p>serviços</p></a>
+            <a class="link4 link-nav-bar" href="#contact"><p>projetos</p></a>
+        </nav>
+        <div class="redirect-Login">
+            <div class="createAccount"><p></p></div>
+            <a class="loginBtn" href="mailto:commercial@pinacullo.com"><p>contato</p></a>
+        </div>
+        <div class="mobile-menu-icon" onclick="toggleMobileMenu()">
+          <span></span><span></span><span></span>
+        </div>
+    </header>
+
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#Home">Início</a>
+      <a href="#About">Sobre</a>
+      <a href="#Tecnologys">Tecnologias</a>
+      <a href="#contact">Desenvolvimento</a>
+      <a href="#services2">Serviços</a>
+      <a href="#contact">Projetos</a>
+      <a href="mailto:commercial@pinacullo.com">Contato</a>
+    </div>
   <main>
     <section id="seo-page" class="container">
       <!-- HERO -->
-      <header class="hero" data-reveal>
-        <h1>seo: sua marca no topo, todos os dias</h1>
-        <p>transforme pesquisas em receita com estratégias que colocam o seu site na frente da concorrência.</p>
-      </header>
+      <section class="hero">
+        <h1>SEO<br><span>sua marca no topo, todos os dias</span></h1>
+        <p>Transforme pesquisas em receita com estratégias que colocam o seu site na frente da concorrência.</p>
+
+        <!-- Call-to-action buttons -->
+        <a href="#" class="btn btn-outline">Learn more</a>
+      </section>
 
       <!-- O QUE É SEO -->
-      <article class="block" data-reveal>
+      <article class="block what-is-seo" data-reveal>
         <h2>o que é seo?</h2>
         <p>
           search engine optimization é o conjunto de técnicas que melhora como o seu site é rastreado, entendido e ranqueado pelos mecanismos de busca.
@@ -62,116 +95,97 @@
         </p>
       </article>
 
-      <!-- POR QUE É IMPORTANTE -->
-      <article class="block" data-reveal>
+      <section class="reveal">
         <h2>por que seo é importante?</h2>
-        <ul>
-          <li><strong>93 %</strong> das experiências on‑line começam em um motor de busca.</li>
-          <li>resultados orgânicos recebem em média <strong>10×</strong> mais cliques que anúncios pagos equivalentes.</li>
-          <li>seo reduz cac, aumenta ltv e cria vantagem competitiva difícil de copiar.</li>
-        </ul>
-      </article>
-
-      <!-- IMPACTOS -->
-      <article class="block" data-reveal>
-        <h2>impactos de um seo bem executado</h2>
-        <p class="bullets">
-          • aumento sustentado de tráfego qualificado<br />
-          • melhora de ctr e engajamento<br />
-          • redução de custo com mídia paga<br />
-          • fortalecimento da autoridade da marca<br />
-          • crescimento composto de leads e vendas
-        </p>
-      </article>
-
-            <!-- TIPOS DE SEO -->
-      <!-- TIPOS DE SEO -->
-      <article class="block" data-reveal>
-        <h2>diferentes tipos de seo</h2>
-        <div class="seo-types-grid custom-grid-3-2">
-          <div class="seo-card">
-            <span class="emoji">🔍</span>
-            <h3>on-page</h3>
-            <p>Conteúdo, headings, URLs e experiência do usuário.</p>
+        <div class="stats-bar">
+          <div class="stat">
+            <div class="number">93%</div>
+            <div class="label">das experiências online começam na busca</div>
           </div>
-          <div class="seo-card">
-            <span class="emoji">🔗</span>
-            <h3>off-page</h3>
-            <p>Autoridade do domínio e backlinks de qualidade.</p>
+          <div class="stat highlight">
+            <div class="number">10×</div>
+            <div class="label">mais cliques em tráfego orgânico</div>
           </div>
-          <div class="seo-card">
-            <span class="emoji">⚙️</span>
-            <h3>técnico</h3>
-            <p>Velocidade do site, sitemap, schema markup e arquitetura.</p>
-          </div>
-          <div class="seo-card">
-            <span class="emoji">📍</span>
-            <h3>local</h3>
-            <p>Otimização para buscas regionais e Google Meu Negócio.</p>
-          </div>
-          <div class="seo-card">
-            <span class="emoji">📝</span>
-            <h3>de conteúdo</h3>
-            <p>Criação de clusters, targeting e intenção de busca.</p>
+          <div class="stat">
+            <div class="number">-35%</div>
+            <div class="label">média na redução de CAC</div>
           </div>
         </div>
-      </article>
+      </section>
 
-
-
-
-      <!-- POR QUE PINACULLO -->
-      <article class="block" data-reveal>
-        <h2>por que contratar a pinacullo?</h2>
-        <p>
-          combinamos <em>data‑driven marketing</em> e expertise full‑stack: auditamos código, corrigimos performance e produzimos conteúdo alinhado às metas do seu negócio.
-          relatórios transparentes, metas mensais claras e suporte contínuo garantem que o investimento em SEO gere retorno real.
-        </p>
+      <!-- IMPACTOS -->
+      <article class="block impactos" data-reveal>
+        <h2>impactos de um seo bem executado</h2>
+        <div class="container-impactos">
+          <div class="impactos-item"><img src="./assets/award.png" alt=""><h3>tráfego qualificado que explode</h3><p>Visitantes já prontos para comprar caem no seu site o dia inteiro, gerando conversões sem parar.</p></div>
+          <div class="impactos-item"><img src="./assets/chart.png" alt=""><h3>ctr e engajamento nas alturas</h3><p>Títulos irresistíveis e páginas rápidas multiplicam o CTR e mantêm o usuário navegando</p></div>
+          <div class="impactos-item"><img src="./assets/loss.png" alt=""><h3>adeus, custos astronômicos de Ads</h3><p>O orgânico assume o volante, corta o CAC e devolve a verba de mídia direto para o lucro.</p></div>
+          <div class="impactos-item"><img src="./assets/award.png" alt=""><h3>autoridade de marca inabalável</h3><p>Seu domínio vira sinônimo de autoridade; concorrentes correm atrás, você dita o ritmo.</p></div>
+        </div>
+        <div></div>
       </article>
 
       <!-- PLANOS -->
       <section class="pricing block" data-reveal>
         <h2>planos seo</h2>
         <div class="plans">
-          <div class="plan-card" aria-label="Plano Essential">
-            <h3>essential</h3>
-            <s>R$400</s>
-            <p class="price">R$300</p>
-            <ul>
-              <li>Análise técnica inicial</li>
-              <li>3 palavras‑chave foco</li>
-              <li>Relatório mensal</li>
-            </ul>
-            <button aria-label="Contratar plano Essential">Contratar</button>
-          </div>
+           <div class="plans-grid">
+            <!-- Core / Essential plan -->
+            <article class="plan" data-icon="core">
+              <span class="badge">Starter</span>
+              <div class="price">R$ 350,00</div>
+              <p class="desc">Melhor para iniciantes</p>
+              <ul>
+                <li>Auditoria básica de código</li>
+                <li>1 relatório mensal simplificado</li>
+                <li>Monitoramento de 3 palavras-chave</li>
+                <li>Suporte por e-mail (Seg-Sex)</li>
+              </ul>
+              <button>Adquirir Agora</button>
+            </article>
 
-          <div class="plan-card" aria-label="Plano Growth">
-            <h3>growth</h3>
-            <s>R$750</s>
-            <p class="price">R$600</p>
-            <ul>
-              <li>Tudo do Essential</li>
-              <li>6 palavras‑chave foco</li>
-              <li>Link building estratégico</li>
-              <li>Relatórios quinzenais</li>
-            </ul>
-            <button aria-label="Contratar plano Growth">Contratar</button>
-          </div>
+            <!-- Overdrive / Featured plan -->
+            <article class="plan featured" data-icon="overdrive">
+              <span class="badge">Conservador</span>
+              <div class="price">R$ 800,00</div>
+              <p class="desc">Plano mais popular</p>
+              <ul>
+                <li>Auditoria técnica completa</li>
+                <li>Relatório estratégico mensal</li>
+                <li>Monitoramento de 10 palavras-chave</li>
+                <li>Otimizações mensais</li>
+                <li>Link building essencial</li>
+                <li>Suporte 7 dias/semana</li>
+              </ul>
+              <button>Adquirir Agora</button>
+            </article>
 
-          <div class="plan-card" aria-label="Plano Dominance">
-            <h3>dominance</h3>
-            <s>R$1200</s>
-            <p class="price">R$1000</p>
-            <ul>
-              <li>Tudo do Growth</li>
-              <li>12 + palavras‑chave foco</li>
-              <li>Conteúdo otimizado mensal</li>
-              <li>Consultoria estratégica 1 h/mês</li>
-              <li>Suporte prioritário</li>
-            </ul>
-            <button aria-label="Contratar plano Dominance">Contratar</button>
+            <!-- Team plan -->
+            <article class="plan" data-icon="team">
+              <span class="badge">Perfeccionista</span>
+              <div class="price">R$ 3500,00</div>
+              <p class="desc">Para quem quer ir alem</p>
+              <ul>
+                <li>Auditoria técnica & de conteúdo completa</li>
+                <li>Relatórios semanais detalhados</li>
+                <li>Monitoramento ilimitado de palavras-chave</li>
+                <li>Otimizações on-page & técnico diárias</li>
+                <li>Estratégia de conteúdo e link building avançado</li>
+                <li>Consultoria dedicada & reuniões mensais</li>
+                <li>Suporte premium 24/7</li>
+              </ul>
+              <button>Adquirir Agora</button>
+            </article>
+            <p class="info-paymant">Valor pago mensalmente sem custos extras</p>
           </div>
         </div>
+      </section>
+      <section class="formulario-container">
+        <h2>formulario</h2>
+        <form action="">
+          <label for="">nome</label>
+          <input type="text">
+        </form>
       </section>
     </section>
   </main>

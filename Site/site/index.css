@@ -1,0 +1,188 @@
+@import url(https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap);
+  /* === CSS‑RESET & CORE TOKENS === */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+
+    :root{
+      --bg:#0f0f10;          /* background vinho‑preto */
+      --surface:#1b1b1d;     /* cartões / blocos */
+      --text:#f5f5f7;        /* texto principal */
+      --subtext:#c4c4c6;     /* texto secundário */
+      --primary:#37ff00;     /* destaque laranja queimado */
+      --border:#2a2a2d;      
+      --radius:12px;
+      --transition:280ms cubic-bezier(.4,0,.2,1);
+    }
+
+
+
+    html{scroll-behavior:smooth}
+
+
+    body{font-family:'montserrat',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+
+
+    p,li{font-size:18px;color:var(--subtext)}
+
+
+    strong{color:var(--text);font-weight:600}
+
+
+    a{color:var(--primary);text-decoration:none}
+
+
+
+    /* === PAGE LAYOUT === */
+    main{width:100%;display:flex;justify-content:center}
+
+
+    .container{width:100%;max-width:1150px;padding:4rem 1.25rem}
+
+
+    .hero{text-align:center;padding:4rem 0 6rem}
+
+
+    .hero p{margin:1.25rem auto 0;max-width:650px}
+
+
+
+    .block{margin-bottom:5rem}
+
+
+    .block ul{list-style:none;padding-left:1rem;margin-top:1.25rem}
+
+
+    .block ul li{position:relative;margin-bottom:.8rem;padding-left:1.5rem}
+
+
+    .block ul li::before{content:"•";position:absolute;left:0;color:var(--primary);font-weight:600}
+
+
+
+    /* === PRICING === */
+    .pricing .plans{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:2.5rem}
+
+
+    .plan-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:2rem;display:flex;flex-direction:column;align-items:flex-start;transition:var(--transition)}
+
+
+    .plan-card:hover{transform:translateY(-6px);border-color:var(--primary);box-shadow:0 6px 18px -6px rgba(--primary)}
+
+
+    .plan-card h3{font-size:1.5rem;margin-bottom:.4rem;color:var(--text)}
+
+
+    .plan-card .price{font-size:2rem;font-weight:600;margin-bottom:1rem;color:var(--primary)}
+
+
+    .plan-card ul{margin-top:.75rem}
+
+
+    .plan-card li::before{color:var(--primary)}
+
+
+    .plan-card button{margin-top:auto;padding:.8rem 1.6rem;border-radius:var(--radius);border:none;background:var(--primary);color:#fff;font-weight:500;font-size:1rem;cursor:pointer;transition:var(--transition)}
+
+
+    .plan-card button:hover{filter:brightness(1.15)}
+
+
+
+    /* === INTERAÇÕES / REVEAL === */
+    [data‑reveal]{opacity:0;transform:translateY(32px);transition:opacity .6s ease,transform .6s ease}
+
+
+
+    /* === SCROLLBAR DARK ELEGANTE === */
+    ::-webkit-scrollbar{width:6px}
+
+
+    ::-webkit-scrollbar-track{background:transparent}
+
+
+    ::-webkit-scrollbar-thumb{background:var(--surface);border-radius:3px}
+
+
+    ::-webkit-scrollbar-thumb:hover{background:var(--primary)}
+
+
+.seo-types-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin-top: 2rem;
+}
+
+.seo-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  text-align: center;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.seo-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--primary);
+  box-shadow: 0 6px 18px -6px rgba(--primary    );
+}
+
+.seo-card .emoji {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.seo-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  color: var(--text);
+  font-family: "Major Mono Display", monospace;
+}
+
+.seo-card p {
+  color: var(--subtext);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+.custom-grid-3-2 {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 2rem;
+}
+
+.custom-grid-3-2 .seo-card:nth-child(4),
+.custom-grid-3-2 .seo-card:nth-child(5) {
+  grid-column: span 3;
+}
+
+@media (min-width: 700px) {
+  .custom-grid-3-2 .seo-card:nth-child(4),
+  .custom-grid-3-2 .seo-card:nth-child(5) {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-grid-3-2 {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+
+  .custom-grid-3-2 .seo-card:nth-child(4),
+  .custom-grid-3-2 .seo-card:nth-child(5) {
+    grid-column: span 1;
+  }
+}
+
+
+    /* === RESPONSIVE TWEAKS === */
+    @media(max-width:600px){
+      .hero{padding-top:3rem}
+
+
+      .plan-card{padding:1.5rem}
+    }

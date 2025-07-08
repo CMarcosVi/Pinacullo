@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gerador de Link do WhatsApp</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="section fade-in">
+    <h1>gerador de link do whatsApp</h1>
+    
+    <input type="text" id="wppNumber" placeholder="Número (ex: 5511999999999)" />
+    
+    <textarea id="wppMessage" placeholder="Mensagem automática"></textarea>
+    
+    <button onclick="generateWppLink()">GERAR LINK</button>
+    
+    <div class="link-area">
+      <p>link gerado:</p>
+      <p><a id="wppResult" href="#" target="_blank"></a></p>
+      <button id="copyBtn" onclick="copyLink()">COPIAR LINK</button>
+      <p id="copyStatus"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
