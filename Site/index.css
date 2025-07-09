@@ -282,7 +282,8 @@ nav {
     background: #fff;
     z-index: 999;
     padding: 1px;
-    animation: 4s ease-in-out forwards border-fill-animation
+    animation: 4s ease-in-out forwards border-fill-animation;
+    padding: 2px;
 }
 
 #Home>div {
@@ -447,10 +448,10 @@ footer>h2 {
 .about__title::after {
     content: "";
     position: absolute;
-    left: 8%;
+    left: 10%;
     transform: translateX(-50%);
     bottom: -10px;
-    width: 140px;
+    width: 20%;
     height: 2px;
     background: #fff;
     border-radius: 1px
@@ -517,6 +518,14 @@ footer>h2 {
 .about__pillars li:hover {
     transform: translateY(-6px) scale(1.03)
 }
+.card-type-1:hover{
+    color: #000;
+    background: #ccc;
+}
+.card-type-1:hover > strong{
+    color: #000;
+}
+
 .about-infos{
     width: 100%;
     display: flex;
@@ -1361,6 +1370,10 @@ footer>h2 {
 
 @media only screen and (max-width:768px) {
     #title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
         text-align: center;
         width: 300px
     }
