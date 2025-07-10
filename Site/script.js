@@ -212,35 +212,45 @@ const opts = {threshold:0.25};            // 25 % visível já conta
   document.querySelectorAll('.slide-up, .slide-down, .slide-left, .slide-right, .slider-opacity')
           .forEach(el=>io.observe(el));
 
-/* --------- NAVBAR HAMBÚRGUER --------- */
+/* -------------------------------------------------- */
+  const mobileNav = document.getElementById("mobileNav");
+  const burger = document.querySelector(".mobile-menu-icon");
 
-// === NAVBAR SCRIPT ===
-const burger = document.querySelector('.burger');
-const nav    = document.querySelector('.nav-links');
+  window.toggleMobileMenu = () => {
+    const open = mobileNav.classList.contains("show");
 
-burger.addEventListener('click', () => {
-  const open = nav.classList.toggle('open');
-  burger.setAttribute('aria-expanded', open);
-  burger.children[0].style.transform = open ? 'rotate(45deg) translateY(8px)' : '';
-  burger.children[1].style.opacity    = open ? '0' : '';
-  burger.children[2].style.transform = open ? 'rotate(-45deg) translateY(-8px)' : '';
-});
+    if (!open) {
+      // Abrir
+      gsap.fromTo(
+        mobileNav,
+        { autoAlpha: 0, y: -10, display: "flex" },
+        { autoAlpha: 1, y: 0, duration: 0.35, ease: "power2.out" }
+      );
+    } else {
+      // Fechar
+      gsap.to(mobileNav, {
+        autoAlpha: 0,
+        y: -10,
+        duration: 0.3,
+        ease: "power2.in",
+        onComplete: () => mobileNav.classList.remove("show"),
+      });
+    }
 
-// Dropdown
-const dropBtn  = document.querySelector('.drop-btn');
-const dropMenu = document.querySelector('.dropdown-menu');
-dropBtn.addEventListener('click', () => {
-  const visible = dropMenu.style.display === 'flex';
-  dropMenu.style.display = visible ? 'none' : 'flex';
-  dropBtn.setAttribute('aria-expanded', !visible);
-});
-document.addEventListener('click', e=>{
-  if(!e.target.closest('.dropdown')){
-    dropMenu.style.display='none';
-    dropBtn.setAttribute('aria-expanded','false');
-  }
-});
+    mobileNav.classList.toggle("show");
+    burger.classList.toggle("open");
 
+    /* ícone “X” animado ------------------------------ */
+    const [l1, l2, l3] = burger.children;
+    if (burger.classList.contains("open")) {
+      gsap.to(l1, { y: 8, rotation: 45, duration: 0.3 });
+      gsap.to(l2, { autoAlpha: 0, duration: 0.3 });
+      gsap.to(l3, { y: -8, rotation: -45, duration: 0.3 });
+    } else {
+      gsap.to([l1, l3], { y: 0, rotation: 0, duration: 0.3 });
+      gsap.to(l2, { autoAlpha: 1, duration: 0.3 });
+    }
+  };
 
 /* =====================  FORMULÁRIO – ENVIO SEGURO  ===================== */
 (() => {

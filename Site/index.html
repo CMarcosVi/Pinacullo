@@ -20,6 +20,9 @@
 <body>
     <header>
         <div class="logo-type"><img src="./assets/unnamed.jpg" alt="pinacullo icone"></div>
+        <button id="nav-toggle" aria-label="Abrir navegação">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
         <nav>
             <a class="link1 link-nav-bar" href="#Home"><p>inicio</p></a>
             <a class="link2 link-nav-bar" href="#About"><p>sobre</p></a>
@@ -29,7 +32,6 @@
             <a class="link4 link-nav-bar" href="#contact"><p>projetos</p></a>
         </nav>
         <div class="redirect-Login">
-            <div class="createAccount"><p></p></div>
             <a class="loginBtn" href="mailto:commercial@pinacullo.com"><p>contato</p></a>
         </div>
     </header>
@@ -351,7 +353,89 @@
                 </div>
             </div>
         </section>      
+        <section id="process">
+            <h2 class="text-services slide-up">processo de criação</h2>
+            <div class="process-line">
+                <div>
+                    <div class="process-img">
+                        <img src="./assets/icons-processes/seminar.png" alt="">
+                    </div>
+                    <div class="infos-inside-process">
+                        <h3 class="title-processes">briefing</h3>
+                        <p class="processes-text">No briefing, mergulhamos no seu negócio para entender cada detalhe e criar soluções tecnológicas sob medida que realmente geram resultado.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="process-img">
+                        <img src="./assets/icons-processes/seminar.png" alt="">
+                    </div>
+                    <div class="infos-inside-process">
+                        <h3 class="title-processes">planejamento</h3>
+                        <p class="processes-text">Definimos estratégias, prazos e funcionalidades para garantir um projeto eficiente e alinhado às suas metas.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="process-img">
+                        <img src="./assets/icons-processes/seminar.png" alt="">
+                    </div>
+                    <div class="infos-inside-process">
+                        <h3 class="title-processes">desenvolvimento</h3>
+                        <p class="processes-text">Transformamos o plano em código limpo, seguro e de alta performance, feito sob medida para você.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="process-img">
+                        <img src="./assets/icons-processes/seminar.png" alt="">
+                    </div>
+                    <div class="infos-inside-process">
+                        <h3 class="title-processes">retoques finais</h3>
+                        <p class="processes-text">Ajustamos cada detalhe, testamos e refinamos para entregar qualidade impecável em todos os dispositivos.</p>
+                    </div>
+                </div>  
+                <div>
+                    <div class="process-img">
+                        <img src="./assets/icons-processes/seminar.png" alt="">
+                    </div>
+                    <div class="infos-inside-process">
+                        <h3 class="title-processes">entrega</h3>
+                        <p class="processes-text">Fazemos a entrega completa do projeto, garantindo qualidade e alinhamento com o que foi planejado</p>
+                    </div>
+                </div>                                                
+            </div>
+        </section>
+        <section class="contact-section slide-left">
+            <div class="contact-column">
+                <h2 class="contact-heading slide-down">
+                Pronto para tirar seu projeto do papel?
+                </h2>
+                <p class="contact-text slide-up ">
+                Envie seu telefone e e-mail e nossa equipe responderá com um orçamento
+                sob medida.
+                </p>
+            </div>
 
+            <form class="contact-form slide-down" action="#" method="post">
+                <div class="input-wrap">
+                <input
+                    type="tel"
+                    id="telefone"
+                    name="telefone"
+                    placeholder="Seu telefone"
+                    required
+                    class="slide-down"
+                />
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Seu e-mail"
+                    required
+                    class="slide-up"
+                />
+                <button type="submit" class="slide-left">Solicitar orçamento</button>
+                </div>
+            </form>
+        </section >
         <div id="nav-bar-mobile">
             <div>
                 <a href="#Home"><img src="./assets/icons-navbar-mobile/home.png" alt="Início"></a>
@@ -363,12 +447,7 @@
         <div class="circle-pointer-mouse"></div>
     </main>
     <footer class="site-footer">
-        <!-- Imagem no topo (substitua o src pela sua) -->
-
-
-        <!-- Conteúdo em 3 colunas -->
         <div class="footer-content">
-            <!-- Coluna 1 — Título + texto -->
             <div class="footer-col">
                 <h3 class="footer-title">pinacullo</h3>
                 <p class="footer-text">
@@ -376,19 +455,15 @@
                     Conte com nossa equipe para elevar o nível do seu projeto.
                 </p>
             </div>
-
-            <!-- Coluna 2 — Contatos -->
             <div class="footer-col">
             <ul class="contact-list">
                 <li>
-                    <a href="mailto:commercial@pinacullo.comm"><img src="./assets/email.png" alt="Email icone"/></a>
+                    <a href="mailto:comercial@pinacullo.com"><img src="./assets/email.png" alt="Email icone"/></a>
                 </li>
             </ul>
             </div>
-
-            <!-- Coluna 3 — Botão -->
             <div class="footer-col footer-col-3">
-                <a class="btn-contact" href="mailto:commercial@pinacullo.com">Entrar em contato</a>
+                <a class="btn-contact" href="mailto:comercial@pinacullo.com">Entrar em contato</a>
             </div>
         </div>
 
