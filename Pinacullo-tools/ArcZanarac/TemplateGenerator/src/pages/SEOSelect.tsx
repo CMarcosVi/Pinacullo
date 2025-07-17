@@ -1,23 +1,76 @@
 import React from 'react';
 
 const SeoOptions: React.FC = () => {
-  return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center px-4">
-      <h1 className="text-3xl font-bold mb-6 text-center">
-        Escolha como deseja realizar a auditoria de SEO
-      </h1>
+  const containerStyle: React.CSSProperties = {
+    minHeight: '100vh',
+    backgroundColor: '#f2f2f2',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: '20px',
+    boxSizing: 'border-box',
+  };
 
-      <div className="flex flex-col sm:flex-row gap-4">
-        <button
-          className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg shadow transition-all duration-300"
-          onClick={() => console.log('Code')}
-        >
+  const titleStyle: React.CSSProperties = {
+    fontSize: '24px',
+    fontWeight: 'bold',
+    marginBottom: '30px',
+    textAlign: 'center',
+    color: '#222',
+  };
+
+  const buttonsContainerStyle: React.CSSProperties = {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '15px',
+  };
+
+  const buttonStyleBase: React.CSSProperties = {
+    padding: '12px 24px',
+    fontSize: '16px',
+    border: 'none',
+    borderRadius: '6px',
+    color: '#fff',
+    cursor: 'pointer',
+    transition: 'background-color 0.3s ease',
+    minWidth: '120px',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+  };
+
+  // Cores específicas dos botões
+  const codeBtnStyle: React.CSSProperties = {
+    ...buttonStyleBase,
+    backgroundColor: '#007bff',
+  };
+
+  const filesBtnStyle: React.CSSProperties = {
+    ...buttonStyleBase,
+    backgroundColor: '#28a745',
+  };
+
+  const urlBtnStyle: React.CSSProperties = {
+    ...buttonStyleBase,
+    backgroundColor: '#6f42c1',
+  };
+
+  return (
+    <div style={containerStyle}>
+      <h1 style={titleStyle}>Escolha como deseja realizar a auditoria de SEO</h1>
+
+      <div style={buttonsContainerStyle}>
+        <button style={codeBtnStyle} onClick={() => console.log('Code')}>
           Code
         </button>
-
-        <button
-          className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg shadow transition-all duration-300"
-          onClick={() => console.log('Files')}
-        >
+        <button style={filesBtnStyle} onClick={() => console.log('Files')}>
           Files
         </button>
+        <button style={urlBtnStyle} onClick={() => console.log('URL')}>
+          URL
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default SeoOptions;
