@@ -50,6 +50,9 @@ section{
   margin: 20px 0;
 }
 .containerCreateTemplate{
+  width: 80%;
+  left: 20%;
+  position: relative;
   padding-left: 10%;
   padding-right: 10%;
 }
