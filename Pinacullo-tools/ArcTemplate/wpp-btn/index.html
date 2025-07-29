@@ -1,0 +1,62 @@
+<div id="wpp-widget"
+     class="wpp"
+     data-nosnippet
+     data-phone="5511999999999"
+     data-text="Olá! Vim do site e gostaria de mais informações.">
+  <button class="wpp-button"
+          type="button"
+          aria-label="Falar no WhatsApp"
+          aria-haspopup="dialog"
+          aria-controls="wpp-sheet"
+          aria-expanded="false">
+    <img
+      class="wpp-ico-img"
+      src="./whatsapp.png"
+      srcset="./whatsapp.png 1x, ./whatsapp@2x.png 2x"
+      width="28" height="28"
+      alt=""
+      aria-hidden="true"
+      decoding="async"
+      fetchpriority="low"
+      loading="eager"
+      draggable="false" />
+    <span class="wpp-tooltip" role="tooltip">Fale no WhatsApp</span>
+    <span class="wpp-ping" aria-hidden="true"></span>
+    <span class="wpp-online" aria-hidden="true" title="Online"></span>
+  </button>
+
+  <div id="wpp-sheet" class="wpp-sheet" role="dialog" aria-modal="false" aria-label="Atendimento via WhatsApp" hidden inert>
+    <header class="wpp-sheet-head">
+      <div class="wpp-agent">
+        <span class="wpp-agent-ava" aria-hidden="true">👩‍💻</span>
+        <div class="wpp-agent-info">
+          <strong id="wpp-title">Atendimento</strong>
+          <span class="typing" aria-hidden="true"><i></i><i></i><i></i></span>
+        </div>
+      </div>
+      <button class="wpp-close" type="button" aria-label="Fechar">✕</button>
+    </header>
+
+    <nav class="wpp-quick" aria-labelledby="wpp-title">
+      <button class="q" type="button" data-msg="Olá! Quero um orçamento.">Orçamento</button>
+      <button class="q" type="button" data-msg="Olá! Preciso de suporte.">Suporte</button>
+      <button class="q" type="button" data-msg="Olá! Falar com o comercial.">Comercial</button>
+    </nav>
+
+    <div class="wpp-actions">
+      <button class="wpp-cta" type="button">Abrir conversa</button>
+      <a class="wpp-alt"
+         href="#"
+         target="_blank"
+         rel="nofollow noopener noreferrer"
+         referrerpolicy="no-referrer">Abrir no WhatsApp Web</a>
+    </div>
+  </div>
+  <noscript>
+    <a href="https://wa.me/5511999999999"
+       target="_blank"
+       rel="nofollow noopener noreferrer"
+       referrerpolicy="no-referrer"
+       style="position:fixed;right:16px;bottom:16px;z-index:9999;display:inline-block;padding:12px 14px;border-radius:999px;background:#25d366;color:#0a0a0a;font:700 14px/1.1 system-ui,Segoe UI,Roboto,Arial">Falar no WhatsApp</a>
+  </noscript>
+</div>

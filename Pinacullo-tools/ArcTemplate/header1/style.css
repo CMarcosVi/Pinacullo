@@ -1,0 +1,148 @@
+    :root {
+      --bg: #0b0c10;
+      --bg-2: #11131a;
+      --txt: #e8e8f0;
+      --muted: #b8bdc9;
+      --brand: #7aa2ff;
+      --accent: #5eead4;
+      --maxw: 1200px;
+      --pad-x: clamp(16px, 4vw, 28px);
+      --h: 64px; /* altura mínima do topo */
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .no-scroll { overflow: hidden; }
+
+    /* ===== Header / Navbar (TUDO DENTRO DO HEADER) ===== */
+    header#site-header {
+      position: sticky; top: 0; z-index: 1000;
+      background: linear-gradient(180deg, var(--bg), var(--bg-2));
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      transition: box-shadow .2s ease;
+    }
+    header#site-header.is-scrolled {
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+    header .bar {
+      height: var(--h);
+      display: flex; align-items: center; justify-content: space-between;
+      max-width: var(--maxw); margin: 0 auto; padding: 0 var(--pad-x);
+      gap: 12px;
+    }
+    /* Brand */
+    header .brand {
+      display: inline-flex; align-items: center; gap: 10px; font-weight: 700;
+      letter-spacing: .2px;
+    }
+    header .brand .logo {
+      width: 28px; height: 28px; border-radius: 8px;
+      background: linear-gradient(135deg, var(--brand), var(--accent));
+      display: inline-block; box-shadow: 0 6px 18px rgba(122,162,255,.35);
+    }
+
+    /* Desktop nav */
+    header nav.desktop {
+      display: none;
+    }
+    header ul.menu {
+      display: flex; align-items: center; gap: 22px;
+      list-style: none; padding: 0; margin: 0;
+    }
+    header ul.menu a {
+      color: var(--muted);
+      padding: 10px 4px; border-radius: 8px;
+      transition: color .15s ease, background .15s ease, transform .15s ease;
+    }
+    header ul.menu a:hover { color: var(--txt); }
+    header ul.menu a:focus-visible {
+      outline: 2px solid var(--brand); outline-offset: 2px;
+    }
+
+    /* CTA (desktop) */
+    header .cta {
+      display: none;
+      padding: 10px 14px; border-radius: 10px;
+      background: linear-gradient(135deg, var(--brand), var(--accent));
+      color: #0a0a0a; font-weight: 700;
+      box-shadow: 0 10px 24px rgba(94,234,212,.25);
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    header .cta:hover { transform: translateY(-1px); }
+    header .cta:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
+    /* Botão hambúrguer */
+    header .hamburger {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 40px; height: 40px; border-radius: 10px;
+      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.08);
+      cursor: pointer;
+    }
+    header .hamburger .lines {
+      position: relative; width: 18px; height: 2px; background: var(--txt);
+    }
+    header .hamburger .lines::before,
+    header .hamburger .lines::after {
+      content: ""; position: absolute; left: 0; width: 18px; height: 2px; background: var(--txt);
+      transition: transform .2s ease, opacity .2s ease;
+    }
+    header .hamburger .lines::before { top: -6px; }
+    header .hamburger .lines::after  { top:  6px; }
+    header.open .hamburger .lines { background: transparent; }
+    header.open .hamburger .lines::before { transform: translateY(6px) rotate(45deg); }
+    header.open .hamburger .lines::after  { transform: translateY(-6px) rotate(-45deg); }
+
+    /* Painel Mobile (overlay) — CONTIDO NO HEADER */
+    header .mobile-panel {
+      position: fixed; inset: 0; /* full screen, ainda que esteja dentro do header */
+      background: rgba(10,10,11,.6);
+      backdrop-filter: blur(6px);
+      display: grid; grid-template-rows: var(--h) 1fr; /* topo + conteúdo */
+      transform: translateY(-100%); opacity: 0; pointer-events: none;
+      transition: transform .25s ease, opacity .25s ease;
+    }
+    header.open .mobile-panel {
+      transform: translateY(0); opacity: 1; pointer-events: auto;
+    }
+    /* Barra superior interna do painel (repete topo para botão fechar) */
+    header .mobile-panel .panel-top {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 var(--pad-x);
+      background: linear-gradient(180deg, var(--bg), #0d0f14);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    /* Conteúdo do painel */
+    header .mobile-panel .panel-body {
+      background: linear-gradient(180deg, #0d1016, #0b0c10);
+      padding: 20px var(--pad-x) max(24px, env(safe-area-inset-bottom));
+      overflow-y: auto;
+    }
+    header .mobile-panel nav.mobile ul {
+      list-style: none; margin: 12px 0 18px; padding: 0;
+      display: grid; gap: 8px;
+    }
+    header .mobile-panel nav.mobile a {
+      display: block; padding: 14px 12px; border-radius: 12px;
+      background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.07);
+      color: var(--txt); font-weight: 600;
+    }
+    header .mobile-panel .panel-actions {
+      display: grid; gap: 10px; margin-top: 12px;
+    }
+    header .mobile-panel .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 14px 16px; border-radius: 12px; font-weight: 700;
+      border: 1px solid rgba(255,255,255,.08);
+      background: linear-gradient(135deg, var(--brand), var(--accent));
+      color: #0b0c10;
+    }
+    header .mobile-panel .btn.secondary {
+      background: transparent; color: var(--txt);
+    }
+
+    /* ===== Breakpoint (Desktop) ===== */
+    @media (min-width: 960px) {
+      header .hamburger { display: none; }
+      header nav.desktop { display: block; }
+      header .cta { display: inline-flex; }
+      header .mobile-panel { display: none; }
+    }

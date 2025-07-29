@@ -1,0 +1,205 @@
+<section class="hc" aria-label="Catálogo de casas">
+  <style>
+    .hc{display:block;padding:28px 20px 36px;background:radial-gradient(60% 80% at 20% 10%,#ffffff30,transparent 60%),radial-gradient(60% 80% at 80% 20%,#ffffff25,transparent 60%),linear-gradient(180deg,#f2f4f7,#eceff3);border-radius:28px}
+    .hc .row{display:grid;grid-template-columns:1fr auto;align-items:end;gap:16px;margin-top:18px}
+    .hc .viewport{overflow:hidden}
+    .hc .track{display:flex;gap:18px;will-change:transform;transform:translate3d(var(--tx,0px),0,0)}
+    .hc .card{position:relative;border-radius:18px;overflow:hidden;isolation:isolate;filter:drop-shadow(0 10px 24px rgba(0,0,0,.18))}
+    .hc .card .media{width:100%;height:100%;display:block;object-fit:cover}
+    .hc .box{position:relative;overflow:hidden}
+
+    /* Tamanhos responsivos dos cards (sem max-width) */
+    .hc{--card-w:280px;--card-ratio:4/5}
+    .hc .card{width:var(--card-w)}
+    .hc .box{aspect-ratio:var(--card-ratio)}
+
+    /* Botões / CTA */
+    .hc .cta{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;border:1px solid #0b0f16;background:#1e232b;color:#eef1f6;text-decoration:none;font:700 14px/1 ui-sans-serif,system-ui,-apple-system,Segoe UI;box-shadow:0 10px 22px rgba(0,0,0,.15)}
+    .hc .cta:hover{transform:translateY(-1px)}
+    .hc .controls{display:flex;gap:12px;justify-content:flex-end}
+    .hc .controls button{width:44px;height:44px;border-radius:999px;border:0;background:#ffffffd9;box-shadow:0 10px 22px rgba(0,0,0,.12);cursor:pointer;display:grid;place-items:center}
+    .hc .controls button[disabled]{opacity:.5;cursor:not-allowed}
+    .hc .controls .ico{position:relative;width:0;height:0;border-style:solid}
+    .hc .prev .ico{border-width:8px 10px 8px 0;border-color:transparent #161a22 transparent transparent;margin-left:-2px}
+    .hc .next .ico{border-width:8px 0 8px 10px;border-color:transparent transparent transparent #161a22;margin-left:2px}
+
+    /* Animação de aparição (stagger) */
+    .hc .card{opacity:0;transform:translateY(8px) scale(.985)}
+    .hc.ready .card{animation:hc-rise .55s cubic-bezier(.21,.7,.2,1) both}
+    .hc.ready .card:nth-child(1){animation-delay:.10s}
+    .hc.ready .card:nth-child(2){animation-delay:.20s}
+    .hc.ready .card:nth-child(3){animation-delay:.30s}
+    .hc.ready .card:nth-child(4){animation-delay:.40s}
+    .hc.ready .card:nth-child(5){animation-delay:.50s}
+    @keyframes hc-rise{from{opacity:0;transform:translateY(8px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
+
+    /* Mobile */
+    @media (max-width:900px){
+      .hc{padding:18px 14px 26px}
+      .hc{--card-w:72vw;--card-ratio:3/4}
+      .hc .row{grid-template-columns:1fr auto}
+      .hc .controls button{width:40px;height:40px}
+      .hc .cta{padding:12px 18px}
+    }
+  </style>
+
+  <!-- VIEWPORT / CARDS -->
+  <div class="viewport" aria-live="polite">
+    <ul class="track" id="hcTrack" role="list">
+      <li class="card" role="listitem">
+        <figure class="box">
+          <img class="media" alt="Каркасный дом, 77м²" src="https://images.unsplash.com/photo-1505691723518-36a5ac3b2d53?q=80&w=1600&auto=format&fit=crop" />
+        </figure>
+      </li>
+      <li class="card" role="listitem">
+        <figure class="box">
+          <img class="media" alt="Каркасный дом, 94м²" src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1600&auto=format&fit=crop" />
+        </figure>
+      </li>
+      <li class="card" role="listitem">
+        <figure class="box">
+          <img class="media" alt="Каркасный дом, 65м²" src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c52f?q=80&w=1600&auto=format&fit=crop" />
+        </figure>
+      </li>
+      <li class="card" role="listitem">
+        <figure class="box">
+          <img class="media" alt="Каркасный дом, 60м²" src="https://images.unsplash.com/photo-1501183638710-841dd1904471?q=80&w=1600&auto=format&fit=crop" />
+        </figure>
+      </li>
+      <!-- extras para fluidez do carrossel -->
+      <li class="card" role="listitem">
+        <figure class="box">
+          <img class="media" alt="Каркасный дом, 82м²" src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1600&auto=format&fit=crop" />
+        </figure>
+      </li>
+      <li class="card" role="listitem">
+        <figure class="box">
+          <img class="media" alt="Каркасный дом, 72м²" src="https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1600&auto=format&fit=crop" />
+        </figure>
+      </li>
+    </ul>
+  </div>
+
+  <!-- CTA / CONTROLS -->
+  <div class="row">
+    <a class="cta" href="#" aria-label="Ir ao catálogo">В каталог →</a>
+    <div class="controls" aria-controls="hcTrack">
+      <button class="prev" type="button" aria-label="Anterior"><span class="ico" aria-hidden="true"></span></button>
+      <button class="next" type="button" aria-label="Próximo"><span class="ico" aria-hidden="true"></span></button>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      const root = document.currentScript.closest('.hc');
+      const track = root.querySelector('.track');
+      const cards = [...root.querySelectorAll('.card')];
+      const btnPrev = root.querySelector('.prev');
+      const btnNext = root.querySelector('.next');
+      const viewport = root.querySelector('.viewport');
+
+      // Marca para animação inicial
+      if (document.readyState === 'complete') root.classList.add('ready');
+      else window.addEventListener('load', ()=> root.classList.add('ready'), {once:true});
+
+      let index = 0;
+      let step = 0;
+      let maxIndex = 0;
+      let tx = 0; // posição atual
+      let target = 0; // posição alvo para easing
+      let rafId;
+
+      const getGap = () => {
+        const s = getComputedStyle(track);
+        return parseFloat(s.columnGap || s.gap || 0);
+      };
+
+      function measure(){
+        const cardW = cards[0].getBoundingClientRect().width;
+        const gap = getGap();
+        step = cardW + gap;
+        const vw = viewport.getBoundingClientRect().width;
+        const visible = Math.max(1, Math.floor((vw + gap) / step));
+        maxIndex = Math.max(0, cards.length - visible);
+        setIndex(index); // re-alinha ao novo tamanho
+        updateButtons();
+      }
+
+      function setIndex(i){
+        index = Math.max(0, Math.min(maxIndex, i));
+        target = -index * step;
+        animateTo(target);
+      }
+
+      function animateTo(dest){
+        cancelAnimationFrame(rafId);
+        const ease = () => {
+          tx += (dest - tx) * 0.12; // easing suave
+          if (Math.abs(dest - tx) < 0.5) { tx = dest; }
+          track.style.setProperty('--tx', tx.toFixed(2) + 'px');
+          if (tx !== dest) rafId = requestAnimationFrame(ease);
+        };
+        rafId = requestAnimationFrame(ease);
+      }
+
+      function updateButtons(){
+        btnPrev.disabled = (index <= 0);
+        btnNext.disabled = (index >= maxIndex);
+      }
+
+      btnPrev.addEventListener('click',()=>{ setIndex(index-1); updateButtons(); });
+      btnNext.addEventListener('click',()=>{ setIndex(index+1); updateButtons(); });
+
+      // Arraste/touch com inércia leve
+      let dragging = false, startX = 0, startTx = 0, velocity = 0, lastX = 0, lastT = 0;
+      const onDown = (e)=>{
+        dragging = true;
+        startX = ('touches' in e)? e.touches[0].clientX : e.clientX;
+        startTx = tx;
+        velocity = 0; lastX = startX; lastT = performance.now();
+        cancelAnimationFrame(rafId);
+      };
+      const onMove = (e)=>{
+        if(!dragging) return;
+        const x = ('touches' in e)? e.touches[0].clientX : e.clientX;
+        const now = performance.now();
+        const dx = x - startX;
+        tx = startTx + dx;
+        // resistência nas bordas
+        const minTx = -maxIndex * step;
+        if(tx > 60) tx = 60 + (tx-60)*0.2;
+        if(tx < minTx - 60) tx = (minTx - 60) + (tx-(minTx-60))*0.2;
+        track.style.setProperty('--tx', tx.toFixed(2)+'px');
+        velocity = (x - lastX) / (now - lastT);
+        lastX = x; lastT = now;
+      };
+      const onUp = ()=>{
+        if(!dragging) return; dragging = false;
+        // inércia simples
+        let dest = tx + velocity * 220; // arremesso
+        // snap ao passo mais próximo
+        const i = Math.round(-dest / step);
+        setIndex(i);
+        updateButtons();
+      };
+
+      viewport.addEventListener('pointerdown', e=>{ viewport.setPointerCapture(e.pointerId); onDown(e); });
+      viewport.addEventListener('pointermove', onMove);
+      viewport.addEventListener('pointerup', onUp);
+      viewport.addEventListener('pointercancel', onUp);
+      viewport.addEventListener('touchstart', onDown, {passive:true});
+      viewport.addEventListener('touchmove', onMove, {passive:true});
+      viewport.addEventListener('touchend', onUp);
+
+      // Teclado
+      root.addEventListener('keydown', (e)=>{
+        if(e.key==='ArrowRight'){ setIndex(index+1); updateButtons(); }
+        if(e.key==='ArrowLeft'){ setIndex(index-1); updateButtons(); }
+      });
+
+      // Recalcula em resize
+      new ResizeObserver(measure).observe(viewport);
+      measure();
+    })();
+  </script>
+</section>
