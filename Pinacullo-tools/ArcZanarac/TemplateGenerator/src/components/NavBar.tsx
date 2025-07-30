@@ -8,6 +8,7 @@ const tabs = [
   { name: "QrCodeGenerator",  path: "/QrCodeGenerator",     icon: "🔳" },
   { name: "ResizeImg",        path: "/ImgRedimensionation", icon: "↔️" },
   { name: "CreateTemplate",   path: "/CreateTemplate",      icon: "📄" },
+   { name: "Briefing",   path: "/Briefing",      icon: "📄" },
 ];
 
 const Navbar: React.FC = () => {

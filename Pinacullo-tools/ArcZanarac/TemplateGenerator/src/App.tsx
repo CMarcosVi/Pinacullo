@@ -15,6 +15,7 @@ const ImageOptimizer = lazy(() => import('./pages/ImgRedimensionation'))
 const QRCodeGenerator = lazy(() => import('./pages/QrCodeGenerator'))
 const WhatsAppLinkGenerator = lazy(() => import('./pages/WppGenerator'))
 const NotFound             = lazy(() => import('./pages/NotFound'))  // 🆕
+const Briefing = lazy(() => import('./pages/Briefing'))
 
 
 
@@ -33,6 +34,7 @@ const App: React.FC = () => (
           <Route path="/WppGenerator" element={<WhatsAppLinkGenerator />} />
           <Route path="/QrCodeGenerator" element={<QRCodeGenerator />} />
           <Route path="/ImgRedimensionation" element={<ImageOptimizer />} />
+          <Route path="/Briefing" element={<Briefing />} />
         </Routes>
         {/* </AuthMiddleware> */}
       </IpVerifyMiddleware>

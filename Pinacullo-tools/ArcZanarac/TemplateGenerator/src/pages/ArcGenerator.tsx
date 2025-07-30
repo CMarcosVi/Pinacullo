@@ -23,7 +23,7 @@ const palette = {
 
 const styles = {
   wrapper: {
-    minHeight: "200vh",
+    minHeight: "230vh",
     display: "flex",
     flexDirection: "column" as const,
     background: `linear-gradient(135deg, ${palette.gradFrom}, ${palette.gradTo})`,
@@ -73,6 +73,7 @@ const styles = {
     borderRadius: 8,
     fontWeight: 600,
     fontSize: "0.95rem",
+    marginBottom: "20px",
     color: "#fff",
     background: palette.primary,
     cursor: "pointer",
@@ -157,11 +158,10 @@ const ArcGenerator: React.FC = () => {
           <CodeEditor label="robots.txt"           language="plaintext"   value={robots}   onChange={setRobots} />
           <CodeEditor label=".htaccess"            language="plaintext"   value={htaccess} onChange={setHtaccess} />
           <CodeEditor label="mail.php"             language="php"         value={php}      onChange={setPhp} />
+          <button style={styles.downloadBtn} onClick={handleDownload}>
+            Gerar ZIP
+          </button>
         </section>
-
-        <button style={styles.downloadBtn} onClick={handleDownload}>
-          Gerar ZIP
-        </button>
       </main>
     </div>
   );
